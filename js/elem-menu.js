@@ -18,22 +18,24 @@ const menu = [
     ]
   },
   {
-    title: "Modulos de Riego",
+    title: "Módulos de Riego",
     icon: "img/icon/Zonas_Metropolitanas.svg",
     items: [
       { name: "Actopan", id: "chkActopan_B1_2025", checked: true },
       { name: "Teltipán", id: "chkTeltipan_B1_2025", checked: true },
       { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
+      { name: "Bexha", id: "chkEl_Bexha_B1_2025", checked: true },
 
     ]
   },
   {
-    title: "Modulos de Riego B1 2025",
+    title: "Módulos de Riego B1 2025",
     icon: "img/icon/Zonas_Metropolitanas.svg",
     items: [
       { name: "Actopan", id: "chkActopan_Bloque_1_2025" },
       { name: "Teltipán", id: "chkTeltipan_Bloque_1_2025" },
       { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
+      { name: "Bexha", id: "chkEl_Bexha_Bloque_1_2025" },
 
     ]
   },

@@ -1055,6 +1055,7 @@ function GeoJSONDistRiego(data, fillColor) {
 var Modulo_Actopan_B1_2025 = GeoJSONModuloRiego(Modulo_Actopan_B1_2025, 'pink');
 var Modulo_Agricola_Teltipan_B1_2025 = GeoJSONModuloRiego(Modulo_Agricola_Teltipan_B1_2025, 'blue');
 var Modulo_Alto_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Alto_Tepatepec_B1_2025, 'blue');
+var Modulo_El_Bexha_B1_2025 = GeoJSONModuloRiego(Modulo_El_Bexha_B1_2025, 'pink');
 
 
 function GeoJSONModuloRiego(data, fillColor) {
@@ -1084,6 +1085,7 @@ function GeoJSONModuloRiego(data, fillColor) {
 var Modulo_Actopan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Actopan_Bloque_1_2025, 'black');
 var Modulo_Agrícola_Teltipan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Agrícola_Teltipan_Bloque_1_2025, 'black');
 var Modulo_Alto_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Alto_Tepatepec_Bloque_1_2025, 'black');
+var Modulo_El_Bexha_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Bexha_Bloque_1_2025, 'black');
 
 
 function GeoJSONModuloRiego2025(data, fillColor) {
@@ -1432,11 +1434,13 @@ var layers = [
   { layer: Modulo_Actopan_B1_2025, checkbox: chkActopan_B1_2025 },
   { layer: Modulo_Agricola_Teltipan_B1_2025, checkbox: chkTeltipan_B1_2025 },
   { layer: Modulo_Alto_Tepatepec_B1_2025, checkbox: chkTepatepec_B1_2025 },
+  { layer: Modulo_El_Bexha_B1_2025, checkbox: chkEl_Bexha_B1_2025 },
 
-  
+
   { layer: Modulo_Actopan_Bloque_1_2025, checkbox: chkActopan_Bloque_1_2025 },
   { layer: Modulo_Agrícola_Teltipan_Bloque_1_2025, checkbox: chkTeltipan_Bloque_1_2025 },
   { layer: Modulo_Alto_Tepatepec_Bloque_1_2025, checkbox: chkTepatepec_Bloque_1_2025 },
+  { layer: Modulo_El_Bexha_Bloque_1_2025, checkbox: chkEl_Bexha_Bloque_1_2025 },
 
 
   // // // Zonas Metropolitanas
