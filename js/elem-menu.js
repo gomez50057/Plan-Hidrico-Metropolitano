@@ -13,8 +13,8 @@ const menu = [
     icon: "img/icon/Zonas_Metropolitanas.svg",
     items: [
       { name: "112 Ajacuba", id: "chk112Ajacuba", checked: true },
-      { name: "100 Alfajayucan", id: "chk100Alfajayucan", checked: true  },
-      { name: "003 Tula", id: "chk003Tula", checked: true  }
+      { name: "100 Alfajayucan", id: "chk100Alfajayucan", checked: true },
+      { name: "003 Tula", id: "chk003Tula", checked: true }
     ]
   },
   {
@@ -25,6 +25,7 @@ const menu = [
       { name: "Teltipán", id: "chkTeltipan_B1_2025", checked: true },
       { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
       { name: "Bexha", id: "chkEl_Bexha_B1_2025", checked: true },
+      { name: "Cerro Juandho", id: "chkCerro_Juandho_B1_2025", checked: true },
 
     ]
   },
@@ -36,6 +37,7 @@ const menu = [
       { name: "Teltipán", id: "chkTeltipan_Bloque_1_2025" },
       { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
       { name: "Bexha", id: "chkEl_Bexha_Bloque_1_2025" },
+      { name: "Cerro Juandho", id: "chkCerro_Juandho_Bloque_1_2025" },
 
     ]
   },
