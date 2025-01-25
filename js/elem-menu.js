@@ -26,6 +26,7 @@ const menu = [
       { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
       { name: "Bexha", id: "chkEl_Bexha_B1_2025", checked: true },
       { name: "Cerro Juandho", id: "chkCerro_Juandho_B1_2025", checked: true },
+      { name: "Endho Xochitlán", id: "chkEndho_Xochitlan_B1_2025", checked: true },
 
     ]
   },
@@ -38,6 +39,7 @@ const menu = [
       { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
       { name: "Bexha", id: "chkEl_Bexha_Bloque_1_2025" },
       { name: "Cerro Juandho", id: "chkCerro_Juandho_Bloque_1_2025" },
+      { name: "Endho Xochitlán", id: "chkEndho_Xochitlán_Bloque_1_2025" },
 
     ]
   },
