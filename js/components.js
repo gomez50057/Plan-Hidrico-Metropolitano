@@ -1060,28 +1060,47 @@ var Modulo_Cerro_Juandho_B1_2025 = GeoJSONModuloRiego(Modulo_Cerro_Juandho_B1_20
 var Modulo_Endho_Xochitlan_B1_2025 = GeoJSONModuloRiego(Modulo_Endho_Xochitlan_B1_2025, 'blue');
 var Modulo_GamaGaox_B1_2025 = GeoJSONModuloRiego(Modulo_GamaGaox_B1_2025, 'blue');
 var Modulo_El_Solis_B1_2025 = GeoJSONModuloRiego(Modulo_El_Solis_B1_2025, 'pink');
+var Modulo_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Tepatepec_B1_2025, 'pink');
 
 
 function GeoJSONModuloRiego(data, fillColor) {
   return L.geoJSON(data, {
     style: function (feature) {
+      // Determinar el color de la línea según TIPO_REV
+      var lineColor;
+      if (feature.properties.TIPO_REV === 'BLOQUE 1' || feature.properties.TIPO_REV === 'ENTUBADO') {
+        lineColor = '#d98637';
+      } else if (feature.properties.TIPO_REV === 'CONCRETO') {
+        lineColor = '#808080';
+      } else {
+        lineColor = fillColor;
+      }
+
       var style = {
         fillColor: fillColor,
         fillOpacity: 0.4,
-        color: fillColor,
+        color: lineColor,
         weight: 5
       };
       return style;
     },
     onEachFeature: function (feature, layer) {
+      var nombre = feature.properties.NOMBRE || "Sin Dato";
+      var nivelRed = feature.properties.NIVEL_RED || "Sin Dato";
+      var tipoRev = feature.properties.TIPO_REV || "Sin Dato";
+      var edoFisico = feature.properties.EDO_FISICO || "Sin Dato";
+      var longitud = (feature.properties.LONG_KM ? feature.properties.LONG_KM.toLocaleString() + " km²" : "Sin Dato");
+      var observaciones = feature.properties.BLOQUE || "Sin Dato";
 
-      var LONG_KM = feature.properties.LONG_KM.toLocaleString() + " km²";
-      layer.bindPopup("<div class='PopupT'>" + "<b>Nombre</b> " + feature.properties.NOMBRE + "</div>" +
-        "<b>Nivel de Red:</b> " + feature.properties.NIVEL_RED +
-        "<br><b>Tipo de Revestimiento:</b> " + feature.properties.TIPO_REV +
-        "<br><b>Estado físico:</b> " + feature.properties.EDO_FISICO +
-        "<br><b>Longitud:</b> " + LONG_KM +
-        "<br><b>Observaciones:</b> " + feature.properties.BLOQUE);
+      // Crear el popup con los datos formateados
+      layer.bindPopup("<div class='PopupT'>" +
+        "<b>Nombre</b> " + nombre + "</div>" +
+        "<b>Nivel de Red:</b> " + nivelRed +
+        "<br><b>Tipo de Revestimiento:</b> " + tipoRev +
+        "<br><b>Estado físico:</b> " + edoFisico +
+        "<br><b>Longitud:</b> " + longitud +
+        "<br><b>Observaciones:</b> " + observaciones
+      );
     }
   }).addTo(map);
 }
@@ -1094,6 +1113,7 @@ var Modulo_Cerro_Juandho_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_Jua
 var Modulo_Endho_Xochitlán_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Endho_Xochitlán_Bloque_1_2025, 'black');
 var Modulo_GamaGaox_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_GamaGaox_Bloque_1_2025, 'black');
 var Modulo_El_Solis_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Solis_Bloque_1_2025, 'black');
+var Modulo_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Tepatepec_Bloque_1_2025, 'black');
 
 
 function GeoJSONModuloRiego2025(data, fillColor) {
@@ -1108,14 +1128,22 @@ function GeoJSONModuloRiego2025(data, fillColor) {
       return style;
     },
     onEachFeature: function (feature, layer) {
+      var nombre = feature.properties.NOMBRE || "Sin Dato";
+      var nivelRed = feature.properties.NIVEL_RED || "Sin Dato";
+      var tipoRev = feature.properties.TIPO_REV || "Sin Dato";
+      var edoFisico = feature.properties.EDO_FISICO || "Sin Dato";
+      var longitud = (feature.properties.LONG_KM ? feature.properties.LONG_KM.toLocaleString() + " km²" : "Sin Dato");
+      var observaciones = feature.properties.BLOQUE || "Sin Dato";
 
-      var LONG_KM = feature.properties.LONG_KM.toLocaleString() + " km²";
-      layer.bindPopup("<div class='PopupT'>" + "<b>Nombre</b> " + feature.properties.NOMBRE + "</div>" +
-        "<b>Nivel de Red:</b> " + feature.properties.NIVEL_RED +
-        "<br><b>Tipo de Revestimiento:</b> " + feature.properties.TIPO_REV +
-        "<br><b>Estado físico:</b> " + feature.properties.EDO_FISICO +
-        "<br><b>Longitud:</b> " + LONG_KM +
-        "<br><b>Observaciones:</b> " + feature.properties.BLOQUE);
+      // Crear el popup con los datos formateados
+      layer.bindPopup("<div class='PopupT'>" +
+        "<b>Nombre</b> " + nombre + "</div>" +
+        "<b>Nivel de Red:</b> " + nivelRed +
+        "<br><b>Tipo de Revestimiento:</b> " + tipoRev +
+        "<br><b>Estado físico:</b> " + edoFisico +
+        "<br><b>Longitud:</b> " + longitud +
+        "<br><b>Observaciones:</b> " + observaciones
+      );
     }
   });
 }
@@ -1441,22 +1469,24 @@ var layers = [
   //Modulo de Riego 
   { layer: Modulo_Actopan_B1_2025, checkbox: chkActopan_B1_2025 },
   { layer: Modulo_Agricola_Teltipan_B1_2025, checkbox: chkTeltipan_B1_2025 },
-  { layer: Modulo_Alto_Tepatepec_B1_2025, checkbox: chkTepatepec_B1_2025 },
+  { layer: Modulo_Alto_Tepatepec_B1_2025, checkbox: chkAlto_Tepatepec_B1_2025 },
   { layer: Modulo_El_Bexha_B1_2025, checkbox: chkEl_Bexha_B1_2025 },
   { layer: Modulo_Cerro_Juandho_B1_2025, checkbox: chkCerro_Juandho_B1_2025 },
   { layer: Modulo_Endho_Xochitlan_B1_2025, checkbox: chkEndho_Xochitlan_B1_2025 },
   { layer: Modulo_GamaGaox_B1_2025, checkbox: chkGamaGaox_B1_2025 },
   { layer: Modulo_El_Solis_B1_2025, checkbox: chkEl_Solis_B1_2025 },
+  { layer: Modulo_Tepatepec_B1_2025, checkbox: chkTepatepec_B1_2025 },
 
 
   { layer: Modulo_Actopan_Bloque_1_2025, checkbox: chkActopan_Bloque_1_2025 },
   { layer: Modulo_Agrícola_Teltipan_Bloque_1_2025, checkbox: chkTeltipan_Bloque_1_2025 },
-  { layer: Modulo_Alto_Tepatepec_Bloque_1_2025, checkbox: chkTepatepec_Bloque_1_2025 },
+  { layer: Modulo_Alto_Tepatepec_Bloque_1_2025, checkbox: chkAlto_Tepatepec_Bloque_1_2025 },
   { layer: Modulo_El_Bexha_Bloque_1_2025, checkbox: chkEl_Bexha_Bloque_1_2025 },
   { layer: Modulo_Cerro_Juandho_Bloque_1_2025, checkbox: chkCerro_Juandho_Bloque_1_2025 },
   { layer: Modulo_Endho_Xochitlán_Bloque_1_2025, checkbox: chkEndho_Xochitlán_Bloque_1_2025 },
   { layer: Modulo_GamaGaox_Bloque_1_2025, checkbox: chkGamaGaox_Bloque_1_2025 },
   { layer: Modulo_El_Solis_Bloque_1_2025, checkbox: chkEl_Solis_Bloque_1_2025 },
+  { layer: Modulo_Tepatepec_Bloque_1_2025, checkbox: chkTepatepec_Bloque_1_2025 },
 
 
   // // // Zonas Metropolitanas

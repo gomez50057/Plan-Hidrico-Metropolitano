@@ -23,12 +23,13 @@ const menu = [
     items: [
       { name: "Actopan", id: "chkActopan_B1_2025", checked: true },
       { name: "Teltipán", id: "chkTeltipan_B1_2025", checked: true },
-      { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
+      { name: "Alto Tepatepec", id: "chkAlto_Tepatepec_B1_2025", checked: true },
       { name: "Bexha", id: "chkEl_Bexha_B1_2025", checked: true },
       { name: "Cerro Juandho", id: "chkCerro_Juandho_B1_2025", checked: true },
       { name: "Endho Xochitlán", id: "chkEndho_Xochitlan_B1_2025", checked: true },
       { name: "GamaGaox", id: "chkGamaGaox_B1_2025", checked: true },
       { name: "El Solis", id: "chkEl_Solis_B1_2025", checked: true },
+      { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
 
     ]
   },
@@ -38,12 +39,13 @@ const menu = [
     items: [
       { name: "Actopan", id: "chkActopan_Bloque_1_2025" },
       { name: "Teltipán", id: "chkTeltipan_Bloque_1_2025" },
-      { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
+      { name: "Alto Tepatepec", id: "chkAlto_Tepatepec_Bloque_1_2025" },
       { name: "Bexha", id: "chkEl_Bexha_Bloque_1_2025" },
       { name: "Cerro Juandho", id: "chkCerro_Juandho_Bloque_1_2025" },
       { name: "Endho Xochitlán", id: "chkEndho_Xochitlán_Bloque_1_2025" },
       { name: "GamaGaox", id: "chkGamaGaox_Bloque_1_2025" },
       { name: "El Solis", id: "chkEl_Solis_Bloque_1_2025" },
+      { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
 
     ]
   },
