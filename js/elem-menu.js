@@ -28,6 +28,7 @@ const menu = [
       { name: "Cerro Juandho", id: "chkCerro_Juandho_B1_2025", checked: true },
       { name: "Endho Xochitlán", id: "chkEndho_Xochitlan_B1_2025", checked: true },
       { name: "GamaGaox", id: "chkGamaGaox_B1_2025", checked: true },
+      { name: "El Solis", id: "chkEl_Solis_B1_2025", checked: true },
 
     ]
   },
@@ -42,6 +43,7 @@ const menu = [
       { name: "Cerro Juandho", id: "chkCerro_Juandho_Bloque_1_2025" },
       { name: "Endho Xochitlán", id: "chkEndho_Xochitlán_Bloque_1_2025" },
       { name: "GamaGaox", id: "chkGamaGaox_Bloque_1_2025" },
+      { name: "El Solis", id: "chkEl_Solis_Bloque_1_2025" },
 
     ]
   },
