@@ -1061,6 +1061,7 @@ var Modulo_Endho_Xochitlan_B1_2025 = GeoJSONModuloRiego(Modulo_Endho_Xochitlan_B
 var Modulo_GamaGaox_B1_2025 = GeoJSONModuloRiego(Modulo_GamaGaox_B1_2025, 'blue');
 var Modulo_El_Solis_B1_2025 = GeoJSONModuloRiego(Modulo_El_Solis_B1_2025, 'pink');
 var Modulo_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Tepatepec_B1_2025, 'pink');
+var Modulo_Cerro_El_Xicuco_B1_2025 = GeoJSONModuloRiego(Modulo_Cerro_El_Xicuco_B1_2025, 'pink');
 
 
 function GeoJSONModuloRiego(data, fillColor) {
@@ -1114,6 +1115,7 @@ var Modulo_Endho_Xochitlán_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Endho_
 var Modulo_GamaGaox_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_GamaGaox_Bloque_1_2025, 'black');
 var Modulo_El_Solis_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Solis_Bloque_1_2025, 'black');
 var Modulo_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Tepatepec_Bloque_1_2025, 'black');
+var Modulo_Cerro_El_Xicuco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_El_Xicuco_Bloque_1_2025, 'black');
 
 
 function GeoJSONModuloRiego2025(data, fillColor) {
@@ -1476,6 +1478,7 @@ var layers = [
   { layer: Modulo_GamaGaox_B1_2025, checkbox: chkGamaGaox_B1_2025 },
   { layer: Modulo_El_Solis_B1_2025, checkbox: chkEl_Solis_B1_2025 },
   { layer: Modulo_Tepatepec_B1_2025, checkbox: chkTepatepec_B1_2025 },
+  { layer: Modulo_Cerro_El_Xicuco_B1_2025, checkbox: chkCerro_El_Xicuco_B1_2025 },
 
 
   { layer: Modulo_Actopan_Bloque_1_2025, checkbox: chkActopan_Bloque_1_2025 },
@@ -1487,6 +1490,7 @@ var layers = [
   { layer: Modulo_GamaGaox_Bloque_1_2025, checkbox: chkGamaGaox_Bloque_1_2025 },
   { layer: Modulo_El_Solis_Bloque_1_2025, checkbox: chkEl_Solis_Bloque_1_2025 },
   { layer: Modulo_Tepatepec_Bloque_1_2025, checkbox: chkTepatepec_Bloque_1_2025 },
+  { layer: Modulo_Cerro_El_Xicuco_Bloque_1_2025, checkbox: chkCerro_El_Xicuco_Bloque_1_2025 },
 
 
   // // // Zonas Metropolitanas

@@ -30,6 +30,7 @@ const menu = [
       { name: "GamaGaox", id: "chkGamaGaox_B1_2025", checked: true },
       { name: "El Solis", id: "chkEl_Solis_B1_2025", checked: true },
       { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
+      { name: "Cerro el Xicuco", id: "chkCerro_El_Xicuco_B1_2025", checked: true },
 
     ]
   },
@@ -46,6 +47,7 @@ const menu = [
       { name: "GamaGaox", id: "chkGamaGaox_Bloque_1_2025" },
       { name: "El Solis", id: "chkEl_Solis_Bloque_1_2025" },
       { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
+      { name: "Cerro el Xicuco", id: "chkCerro_El_Xicuco_Bloque_1_2025" },
 
     ]
   },
