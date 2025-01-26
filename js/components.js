@@ -26,7 +26,8 @@ const crs84 = new L.Proj.CRS('EPSG:4326',
   }
 );
 
-var map = L.map('map').setView([20.44819465937593, -98.41534285830343], 8,);
+// var map = L.map('map').setView([20.44819465937593, -98.41534285830343], 8,);
+var map = L.map('map').setView([20.2518903, -98.9483643], 10,);
 map.attributionControl.setPrefix(''); // Esto elimina cualquier texto de atribución
 
 //Mapa Base
