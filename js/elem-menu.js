@@ -32,6 +32,7 @@ const menu = [
       { name: "Tepatepec", id: "chkTepatepec_B1_2025", checked: true },
       { name: "Cerro el Xicuco", id: "chkCerro_El_Xicuco_B1_2025", checked: true },
       { name: "100 Ajacuba", id: "chk100_Ajacuba_B1_2025", checked: true },
+      { name: "Artículo 27", id: "chkArticulo_27_B1_2025", checked: true },
 
     ]
   },
@@ -50,6 +51,7 @@ const menu = [
       { name: "Tepatepec", id: "chkTepatepec_Bloque_1_2025" },
       { name: "Cerro el Xicuco", id: "chkCerro_El_Xicuco_Bloque_1_2025" },
       { name: "100 Ajacuba", id: "chk100_Ajacuba_Bloque_1_2025" },
+      { name: "Artículo 27", id: "chkArticulo_27_Bloque_1_2025" },
 
     ]
   },
