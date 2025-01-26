@@ -166,36 +166,36 @@ const menu = [
   //     },
   //   ]
   // },
-  {
-    title: "Zonas Metropolitanas",
-    icon: "img/icon/Zonas_Metropolitanas.svg",
-    items: [
-      {
-        name: "Información Básica",
-        subItems: [
-          { name: "ZMVM", id: "chkDivisionZMVM" },
-          { name: "ZMPachuca", id: "chkInfoZMP" },
-          { name: "ZMTula", id: "chkInfoZMT" },
-          { name: "ZMTulancingo", id: "chkInfoZMTUL" }
-        ]
-      },
-      {
-        name: "Población por AGEB",
-        subItems: [
-          { name: "ZMPachuca", id: "chkPobAGEBZMP" }
-        ]
-      },
-      {
-        name: "PDUyOT ZMP",
-        subItems: [
-          { name: "Imagen Objetivo", id: "chkZMP_PDUyOT_ImgObj" },
-          { name: "Zonificación Primaria", id: "chkZMP_PDUyOT_ZonP" },
-          { name: "Etapas de Crecimiento", id: "chkZMP_PDUyOT_EC" },
-          { name: "Polígonos de Actuación", id: "chkZMP_PDUyOT_PA" }
-        ]
-      },
-    ]
-  },
+  // {
+  //   title: "Zonas Metropolitanas",
+  //   icon: "img/icon/Zonas_Metropolitanas.svg",
+  //   items: [
+  //     {
+  //       name: "Información Básica",
+  //       subItems: [
+  //         { name: "ZMVM", id: "chkDivisionZMVM" },
+  //         { name: "ZMPachuca", id: "chkInfoZMP" },
+  //         { name: "ZMTula", id: "chkInfoZMT" },
+  //         { name: "ZMTulancingo", id: "chkInfoZMTUL" }
+  //       ]
+  //     },
+  //     {
+  //       name: "Población por AGEB",
+  //       subItems: [
+  //         { name: "ZMPachuca", id: "chkPobAGEBZMP" }
+  //       ]
+  //     },
+  //     {
+  //       name: "PDUyOT ZMP",
+  //       subItems: [
+  //         { name: "Imagen Objetivo", id: "chkZMP_PDUyOT_ImgObj" },
+  //         { name: "Zonificación Primaria", id: "chkZMP_PDUyOT_ZonP" },
+  //         { name: "Etapas de Crecimiento", id: "chkZMP_PDUyOT_EC" },
+  //         { name: "Polígonos de Actuación", id: "chkZMP_PDUyOT_PA" }
+  //       ]
+  //     },
+  //   ]
+  // },
   // {
   //   title: "Regionalización",
   //   icon: "img/icon/Regiones.svg",

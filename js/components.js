@@ -858,101 +858,101 @@ function geoJSONInfoHgo(data, color) {
 // // // Zonas Metropolitanas // // //
 
 // ZMVM
-var ZMVM_InfoGene = geoJSONZMVM(zmvm_InfoGeneral);
-function geoJSONZMVM(data) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      var nomEntidad = feature.properties.NOM_ENT;
-      var color = nomEntidad === "Hidalgo" ? "#BC955B" :
-        nomEntidad === "Estado de México" ? "#691B31" :
-          nomEntidad === "Ciudad de México" ? "#3a9680" : "orange";
-      return {
-        fillColor: color,
-        color: color,
-        weight: 2.6,
-        fillOpacity: 0.45
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      var poblacionMun = feature.properties.POBMUN.toLocaleString();
-      var poblacionFem = feature.properties.POBFEM.toLocaleString();
-      var poblacionMas = feature.properties.POBMAS.toLocaleString();
-      var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
-      var PobMetro = feature.properties.POBMETRO.toLocaleString();
-      layer.bindPopup("<div class='PopupT'>" + feature.properties.NOM_ENT + "</div>" +
-        "<b>Nombre del Municipio:</b> " + feature.properties.NOM_MUN +
-        "<br><b>Población Municipal:</b> " + poblacionMun +
-        "<br><b>Mujeres:</b> " + poblacionFem +
-        "<br><b>Hombres:</b> " + poblacionMas +
-        "<br><b>Superficie:</b> " + SupMun +
-        "<br><b>Población Metropolitana:</b> " + PobMetro);
-    }
-  });
-}
+// var ZMVM_InfoGene = geoJSONZMVM(zmvm_InfoGeneral);
+// function geoJSONZMVM(data) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       var nomEntidad = feature.properties.NOM_ENT;
+//       var color = nomEntidad === "Hidalgo" ? "#BC955B" :
+//         nomEntidad === "Estado de México" ? "#691B31" :
+//           nomEntidad === "Ciudad de México" ? "#3a9680" : "orange";
+//       return {
+//         fillColor: color,
+//         color: color,
+//         weight: 2.6,
+//         fillOpacity: 0.45
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       var poblacionMun = feature.properties.POBMUN.toLocaleString();
+//       var poblacionFem = feature.properties.POBFEM.toLocaleString();
+//       var poblacionMas = feature.properties.POBMAS.toLocaleString();
+//       var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
+//       var PobMetro = feature.properties.POBMETRO.toLocaleString();
+//       layer.bindPopup("<div class='PopupT'>" + feature.properties.NOM_ENT + "</div>" +
+//         "<b>Nombre del Municipio:</b> " + feature.properties.NOM_MUN +
+//         "<br><b>Población Municipal:</b> " + poblacionMun +
+//         "<br><b>Mujeres:</b> " + poblacionFem +
+//         "<br><b>Hombres:</b> " + poblacionMas +
+//         "<br><b>Superficie:</b> " + SupMun +
+//         "<br><b>Población Metropolitana:</b> " + PobMetro);
+//     }
+//   });
+// }
 
 // ZMP, ZMT Y ZMTUL
-// var PobZMVM2020 = geoJSONMetropolitanas(zmvm_InfoGeneral, 'Pink', 'transparent');
-var InfoZMP = geoJSONMetropolitanas(ZMP_Info, '#B6DC76', 'transparent');
-var InfoZMT = geoJSONMetropolitanas(ZMT_Info, 'Aqua', 'transparent');
-var InfoZMTUL = geoJSONMetropolitanas(ZMTUL_Info, '#241E4E', 'transparent');
-function geoJSONMetropolitanas(data, fillColor, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: fillColor, // Cambiar a cualquier color que desees
-        fillOpacity: 0.7, // Cambiar la opacidad del relleno
-        color: color, // Cambiar el color del borde
-        weight: 2, // Cambiar el grosor del borde
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      var poblacionMun = feature.properties.POBMUN.toLocaleString();
-      var poblacionFem = feature.properties.POBFEM.toLocaleString();
-      var poblacionMas = feature.properties.POBMAS.toLocaleString();
-      var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
+// // var PobZMVM2020 = geoJSONMetropolitanas(zmvm_InfoGeneral, 'Pink', 'transparent');
+// var InfoZMP = geoJSONMetropolitanas(ZMP_Info, '#B6DC76', 'transparent');
+// var InfoZMT = geoJSONMetropolitanas(ZMT_Info, 'Aqua', 'transparent');
+// var InfoZMTUL = geoJSONMetropolitanas(ZMTUL_Info, '#241E4E', 'transparent');
+// function geoJSONMetropolitanas(data, fillColor, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: fillColor, // Cambiar a cualquier color que desees
+//         fillOpacity: 0.7, // Cambiar la opacidad del relleno
+//         color: color, // Cambiar el color del borde
+//         weight: 2, // Cambiar el grosor del borde
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       var poblacionMun = feature.properties.POBMUN.toLocaleString();
+//       var poblacionFem = feature.properties.POBFEM.toLocaleString();
+//       var poblacionMas = feature.properties.POBMAS.toLocaleString();
+//       var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
 
-      var PMDU = feature.properties.PMDU;
-      var LINKPMDU = feature.properties.LINKPMDU;
+//       var PMDU = feature.properties.PMDU;
+//       var LINKPMDU = feature.properties.LINKPMDU;
 
-      var LINKPMD = feature.properties.LINKPMD;
+//       var LINKPMD = feature.properties.LINKPMD;
 
-      var ATLAS = feature.properties.ATLAS;
-      var LINKATLAS = feature.properties.LINKATLAS;
+//       var ATLAS = feature.properties.ATLAS;
+//       var LINKATLAS = feature.properties.LINKATLAS;
 
-      var PobEst = feature.properties.POB_ESTATA.toLocaleString();
+//       var PobEst = feature.properties.POB_ESTATA.toLocaleString();
 
-      layer.bindPopup("<div class='PopupT'>" + "<b>Zona Metropolitana de </b> " + feature.properties.NO_Zona + "</div>" +
-        "<b>Municipio:</b> " + feature.properties.NOM_MUN +
-        "<br><b>Población Municipal:</b> " + poblacionMun +
-        "<br><b>Mujeres:</b> " + poblacionFem +
-        "<br><b>Hombres:</b> " + poblacionMas +
-        "<br><b>Superficie:</b> " + SupMun +
-        "<br><b>Población Metropolitana:</b> " + PobEst +
-        "<div class='PopupSubT'><b>Instrumentos de Planeación </b></div>");
+//       layer.bindPopup("<div class='PopupT'>" + "<b>Zona Metropolitana de </b> " + feature.properties.NO_Zona + "</div>" +
+//         "<b>Municipio:</b> " + feature.properties.NOM_MUN +
+//         "<br><b>Población Municipal:</b> " + poblacionMun +
+//         "<br><b>Mujeres:</b> " + poblacionFem +
+//         "<br><b>Hombres:</b> " + poblacionMas +
+//         "<br><b>Superficie:</b> " + SupMun +
+//         "<br><b>Población Metropolitana:</b> " + PobEst +
+//         "<div class='PopupSubT'><b>Instrumentos de Planeación </b></div>");
 
-      // Comprobar si PMDU no es igual a "No existe" y agregar la sección correspondiente
-      if (PMDU !== "No existe") {
-        layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " +
-          "<a href='" + LINKPMDU + "' target='_blank'>" + feature.properties.NOM_LINK_P +
-          "</a>" + "<b> (</b>" + feature.properties.FECH + "<b>)</b>");
-      } else {
-        layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " + PMDU);
-      }
-      layer.setPopupContent(layer.getPopup()._content + "<br><b>PMD:</b> " +
-        "<a href='" + LINKPMD + "' target='_blank'>" + "<b> Consultar </b>" +
-        "</a>" + "<b> (</b>" + feature.properties.FECHPMD + "<b>)</b>");
+//       // Comprobar si PMDU no es igual a "No existe" y agregar la sección correspondiente
+//       if (PMDU !== "No existe") {
+//         layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " +
+//           "<a href='" + LINKPMDU + "' target='_blank'>" + feature.properties.NOM_LINK_P +
+//           "</a>" + "<b> (</b>" + feature.properties.FECH + "<b>)</b>");
+//       } else {
+//         layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " + PMDU);
+//       }
+//       layer.setPopupContent(layer.getPopup()._content + "<br><b>PMD:</b> " +
+//         "<a href='" + LINKPMD + "' target='_blank'>" + "<b> Consultar </b>" +
+//         "</a>" + "<b> (</b>" + feature.properties.FECHPMD + "<b>)</b>");
 
-      // Comprobar si ATLAS no es igual a "No existe" y agregar la sección correspondiente
-      if (ATLAS !== "No existe") {
-        layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " +
-          "<a href='" + LINKATLAS + "' target='_blank'>" + "<b> Consultar </b>" +
-          "</a>" + "<b> (</b>" + feature.properties.FECHATLAS + "<b>)</b>");
-      } else {
-        layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " + ATLAS);
-      }
-    }
-  });
-}
+//       // Comprobar si ATLAS no es igual a "No existe" y agregar la sección correspondiente
+//       if (ATLAS !== "No existe") {
+//         layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " +
+//           "<a href='" + LINKATLAS + "' target='_blank'>" + "<b> Consultar </b>" +
+//           "</a>" + "<b> (</b>" + feature.properties.FECHATLAS + "<b>)</b>");
+//       } else {
+//         layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " + ATLAS);
+//       }
+//     }
+//   });
+// }
 
 // // // AGEB en General // // //
 // Función para asignar un color en función del rango de población por AGEB
@@ -983,7 +983,7 @@ function getColor(poblacion) {
 // var PobAGEB_R112020 = createGeoJSONLayer(R11_poblacionAGEB2020); // REGION 11
 // var PobAGEB_R122020 = createGeoJSONLayer(R12_poblacionAGEB2020); // REGION 12
 
-var PobAGEB_ZMP2020 = createGeoJSONLayer(ZMP_poblacionAGEB2020); // ZMP AGEB
+// var PobAGEB_ZMP2020 = createGeoJSONLayer(ZMP_poblacionAGEB2020); // ZMP AGEB
 var PobAGEB_HGO2020 = createGeoJSONLayer(HgoAGEB2020); // Hidalgo AGEB
 
 function createGeoJSONLayer(data) {
@@ -1159,189 +1159,189 @@ function GeoJSONModuloRiego2025(data, fillColor) {
 }
 
 
-function geoJSONPDUyOTImgObj(data, fillColor, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      var style = {
-        fillColor: fillColor,
-        fillOpacity: 0.4,
-        color: color,
-        weight: 4
-      };
-      if (feature.geometry.type === "MultiLineString") {
-        style.dashArray = "5, 10";
-      }
-      return style;
-    },
-    onEachFeature: function (feature, layer) {
-      var popupContent = "<b></b>";
-      for (var key in feature.properties) {
-        if (feature.properties.hasOwnProperty(key)) {
-          var value = feature.properties[key];
-          // Verifica si la clave es "Superficie" y agrega "ha" al valor
-          if (key === "Superficie") {
-            value += " ha";
-          }
-          popupContent += "<b>" + key + ":</b> " + value + "<br>";
-        }
-      }
-      layer.bindPopup(popupContent);
-    }
-  });
-}
+// function geoJSONPDUyOTImgObj(data, fillColor, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       var style = {
+//         fillColor: fillColor,
+//         fillOpacity: 0.4,
+//         color: color,
+//         weight: 4
+//       };
+//       if (feature.geometry.type === "MultiLineString") {
+//         style.dashArray = "5, 10";
+//       }
+//       return style;
+//     },
+//     onEachFeature: function (feature, layer) {
+//       var popupContent = "<b></b>";
+//       for (var key in feature.properties) {
+//         if (feature.properties.hasOwnProperty(key)) {
+//           var value = feature.properties[key];
+//           // Verifica si la clave es "Superficie" y agrega "ha" al valor
+//           if (key === "Superficie") {
+//             value += " ha";
+//           }
+//           popupContent += "<b>" + key + ":</b> " + value + "<br>";
+//         }
+//       }
+//       layer.bindPopup(popupContent);
+//     }
+//   });
+// }
 
 
 
 // // // PDUyOT Zona Metropolitana de Pachuca // // //
-var ZMP_Ampliacion_Tren = geoJSONPDUyOTImgObj(ZMP_Ampliacion_Tren, 'darkblue', 'darkblue');
-var ZMP_Vialidades_Propuestas = geoJSONPDUyOTImgObj(ZMP_Vialidades_Propuestas, 'cornflowerblue', 'cornflowerblue');
-var ZMP_Libramiento_Sur = geoJSONPDUyOTImgObj(ZMP_Libramiento_Sur, 'Gold', 'Gold');
-var ZMP_Habilitacion_Tren = geoJSONPDUyOTImgObj(ZMP_Habilitacion_Tren, 'black', 'black');
-var ZMP_Estacion_Tren = geoJSONPDUyOTImgObj(ZMP_Estacion_Tren, 'saddlebrown', 'saddlebrown');
-var ZMP_Corredor_Tur_Pac_T = geoJSONPDUyOTImgObj(ZMP_Corredor_Tur_Pac_T, 'purple', 'purple');
-var ZMP_Corredor_Montana = geoJSONPDUyOTImgObj(ZMP_Corredor_Montana, 'firebrick', 'firebrick');
-var ZMP_Corredor_Haciendas = geoJSONPDUyOTImgObj(ZMP_Corredor_Haciendas, 'deeppink', 'deeppink');
-var ZMP_CM_UNESCO = geoJSONPDUyOTImgObj(ZMP_CM_UNESCO, '#ee958b', '#ee958b');
-var ZMP_Acueducto_Padre_Tembleque = geoJSONPDUyOTImgObj(ZMP_Acueducto_Padre_Tembleque, 'mediumspringgreen', 'mediumspringgreen');
-var ZMP_CorredorCySCarrMéxico_Pachuca = geoJSONPDUyOTImgObj(ZMP_CorredorCySCarrMéxico_Pachuca, 'Red', 'Red');
-var ZMP_CorredorCySCarrPachuca_CiudadSahagun = geoJSONPDUyOTImgObj(ZMP_CorredorCySCarrPachuca_CiudadSahagun, 'darkorange', 'darkorange');
-var ZMP_Parques_Industriales = geoJSONPDUyOTImgObj(ZMP_Parques_Industriales, '#14122c', '#14122c');
-var ZMP_CU = geoJSONPDUyOTImgObj(ZMP_CU, 'Orange ', 'Orange ');
-var ZMP_CUR = geoJSONPDUyOTImgObj(ZMP_CUR, 'blanchedalmond', 'blanchedalmond');
-var ZMP_SCU = geoJSONPDUyOTImgObj(ZMP_SCU, 'coral', 'coral');
-var ZMP_ParqueHídrico = geoJSONPDUyOTImgObj(ZMP_ParqueHídrico, '#b3ff19', '#b3ff19');
-var ZMP_ParqueEcológico = geoJSONPDUyOTImgObj(ZMP_ParqueEcológico, 'green', 'green');
-var ZMP_N1er = geoJSONPDUyOTImgObj(ZMP_N1er, '#416864', '#fff');
-var ZMP_N2do = geoJSONPDUyOTImgObj(ZMP_N2do, '#759eff', '#fff');
-var ZMP_N3er = geoJSONPDUyOTImgObj(ZMP_N3er, '#e4fff9', '#fff');
-var ZMP_PPDU = geoJSONPDUyOTImgObj(ZMP_PPDU, '#a0fb0e02', '#c00000');
+// var ZMP_Ampliacion_Tren = geoJSONPDUyOTImgObj(ZMP_Ampliacion_Tren, 'darkblue', 'darkblue');
+// var ZMP_Vialidades_Propuestas = geoJSONPDUyOTImgObj(ZMP_Vialidades_Propuestas, 'cornflowerblue', 'cornflowerblue');
+// var ZMP_Libramiento_Sur = geoJSONPDUyOTImgObj(ZMP_Libramiento_Sur, 'Gold', 'Gold');
+// var ZMP_Habilitacion_Tren = geoJSONPDUyOTImgObj(ZMP_Habilitacion_Tren, 'black', 'black');
+// var ZMP_Estacion_Tren = geoJSONPDUyOTImgObj(ZMP_Estacion_Tren, 'saddlebrown', 'saddlebrown');
+// var ZMP_Corredor_Tur_Pac_T = geoJSONPDUyOTImgObj(ZMP_Corredor_Tur_Pac_T, 'purple', 'purple');
+// var ZMP_Corredor_Montana = geoJSONPDUyOTImgObj(ZMP_Corredor_Montana, 'firebrick', 'firebrick');
+// var ZMP_Corredor_Haciendas = geoJSONPDUyOTImgObj(ZMP_Corredor_Haciendas, 'deeppink', 'deeppink');
+// var ZMP_CM_UNESCO = geoJSONPDUyOTImgObj(ZMP_CM_UNESCO, '#ee958b', '#ee958b');
+// var ZMP_Acueducto_Padre_Tembleque = geoJSONPDUyOTImgObj(ZMP_Acueducto_Padre_Tembleque, 'mediumspringgreen', 'mediumspringgreen');
+// var ZMP_CorredorCySCarrMéxico_Pachuca = geoJSONPDUyOTImgObj(ZMP_CorredorCySCarrMéxico_Pachuca, 'Red', 'Red');
+// var ZMP_CorredorCySCarrPachuca_CiudadSahagun = geoJSONPDUyOTImgObj(ZMP_CorredorCySCarrPachuca_CiudadSahagun, 'darkorange', 'darkorange');
+// var ZMP_Parques_Industriales = geoJSONPDUyOTImgObj(ZMP_Parques_Industriales, '#14122c', '#14122c');
+// var ZMP_CU = geoJSONPDUyOTImgObj(ZMP_CU, 'Orange ', 'Orange ');
+// var ZMP_CUR = geoJSONPDUyOTImgObj(ZMP_CUR, 'blanchedalmond', 'blanchedalmond');
+// var ZMP_SCU = geoJSONPDUyOTImgObj(ZMP_SCU, 'coral', 'coral');
+// var ZMP_ParqueHídrico = geoJSONPDUyOTImgObj(ZMP_ParqueHídrico, '#b3ff19', '#b3ff19');
+// var ZMP_ParqueEcológico = geoJSONPDUyOTImgObj(ZMP_ParqueEcológico, 'green', 'green');
+// var ZMP_N1er = geoJSONPDUyOTImgObj(ZMP_N1er, '#416864', '#fff');
+// var ZMP_N2do = geoJSONPDUyOTImgObj(ZMP_N2do, '#759eff', '#fff');
+// var ZMP_N3er = geoJSONPDUyOTImgObj(ZMP_N3er, '#e4fff9', '#fff');
+// var ZMP_PPDU = geoJSONPDUyOTImgObj(ZMP_PPDU, '#a0fb0e02', '#c00000');
 
-function geoJSONPDUyOTImgObj(data, fillColor, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      var style = {
-        fillColor: fillColor,
-        fillOpacity: 0.4,
-        color: color,
-        weight: 4
-      };
-      if (feature.geometry.type === "MultiLineString") {
-        style.dashArray = "5, 10";
-      }
-      return style;
-    },
-    onEachFeature: function (feature, layer) {
-      var popupContent = "<b></b>";
-      for (var key in feature.properties) {
-        if (feature.properties.hasOwnProperty(key)) {
-          var value = feature.properties[key];
-          // Verifica si la clave es "Superficie" y agrega "ha" al valor
-          if (key === "Superficie") {
-            value += " ha";
-          }
-          popupContent += "<b>" + key + ":</b> " + value + "<br>";
-        }
-      }
-      layer.bindPopup(popupContent);
-    }
-  });
-}
+// function geoJSONPDUyOTImgObj(data, fillColor, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       var style = {
+//         fillColor: fillColor,
+//         fillOpacity: 0.4,
+//         color: color,
+//         weight: 4
+//       };
+//       if (feature.geometry.type === "MultiLineString") {
+//         style.dashArray = "5, 10";
+//       }
+//       return style;
+//     },
+//     onEachFeature: function (feature, layer) {
+//       var popupContent = "<b></b>";
+//       for (var key in feature.properties) {
+//         if (feature.properties.hasOwnProperty(key)) {
+//           var value = feature.properties[key];
+//           // Verifica si la clave es "Superficie" y agrega "ha" al valor
+//           if (key === "Superficie") {
+//             value += " ha";
+//           }
+//           popupContent += "<b>" + key + ":</b> " + value + "<br>";
+//         }
+//       }
+//       layer.bindPopup(popupContent);
+//     }
+//   });
+// }
 
 
 // Zonificación Primaria
-var ZMP_Urbano = geoJSONPDUyOT_ZP(ZMP_Urbano, 'khaki');
-var ZMP_SUrbanizable = geoJSONPDUyOT_ZP(ZMP_SUrbanizable, 'orange');
-var ZMP_SNoU = geoJSONPDUyOT_ZP(ZMP_SNoU, 'yellowgreen');
+// var ZMP_Urbano = geoJSONPDUyOT_ZP(ZMP_Urbano, 'khaki');
+// var ZMP_SUrbanizable = geoJSONPDUyOT_ZP(ZMP_SUrbanizable, 'orange');
+// var ZMP_SNoU = geoJSONPDUyOT_ZP(ZMP_SNoU, 'yellowgreen');
 
-function geoJSONPDUyOT_ZP(data, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: color, // Cambiar a cualquier color que desees
-        fillOpacity: 0.3, // Cambiar la opacidad del relleno
-        color: 'transparent', // Cambiar el color del borde
-        weight: 4, // Cambiar el grosor del borde
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup("<b>Zonificación Primaria:</b> " + feature.properties.ZON_PRIM);
+// function geoJSONPDUyOT_ZP(data, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: color, // Cambiar a cualquier color que desees
+//         fillOpacity: 0.3, // Cambiar la opacidad del relleno
+//         color: 'transparent', // Cambiar el color del borde
+//         weight: 4, // Cambiar el grosor del borde
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       layer.bindPopup("<b>Zonificación Primaria:</b> " + feature.properties.ZON_PRIM);
 
-    }
-  });
-}
+//     }
+//   });
+// }
 
 // Etapas de Crecimiento
 
-var ZMP_ZonaU = geoJSONPDUyOT_EP(ZMP_ZonaU, '#eeef5d');
-var ZMP_CP20_22 = geoJSONPDUyOT_EP(ZMP_CP20_22, '#ffcc50');
-var ZMP_MP22_27 = geoJSONPDUyOT_EP(ZMP_MP22_27, '#ffa722');
-var ZMP_LP27_52 = geoJSONPDUyOT_EP(ZMP_LP27_52, '#ed8900');
-var ZMP_Res = geoJSONPDUyOT_EP(ZMP_Res, '#853400');
-var ZMP_SueloNoUrbanizable = geoJSONPDUyOT_EP(ZMP_SueloNoUrbanizable, 'yellowgreen');
-var ZMP_PoliAct = geoJSONPDUyOT_EP(ZMP_PoliAct, 'dimgrey');
+// var ZMP_ZonaU = geoJSONPDUyOT_EP(ZMP_ZonaU, '#eeef5d');
+// var ZMP_CP20_22 = geoJSONPDUyOT_EP(ZMP_CP20_22, '#ffcc50');
+// var ZMP_MP22_27 = geoJSONPDUyOT_EP(ZMP_MP22_27, '#ffa722');
+// var ZMP_LP27_52 = geoJSONPDUyOT_EP(ZMP_LP27_52, '#ed8900');
+// var ZMP_Res = geoJSONPDUyOT_EP(ZMP_Res, '#853400');
+// var ZMP_SueloNoUrbanizable = geoJSONPDUyOT_EP(ZMP_SueloNoUrbanizable, 'yellowgreen');
+// var ZMP_PoliAct = geoJSONPDUyOT_EP(ZMP_PoliAct, 'dimgrey');
 
-function geoJSONPDUyOT_EP(data, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: color, // Cambiar a cualquier color que desees
-        fillOpacity: 0.5, // Cambiar la opacidad del relleno
-        color: 'transparent', // Cambiar el color del borde
-        weight: 4, // Cambiar el grosor del borde
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup("<b>Estatus de área :</b> " + feature.properties.ZON_PRIM +
-        "<br><b>Etapa:</b> " + feature.properties.ETAPAS);
-    }
-  });
-}
+// function geoJSONPDUyOT_EP(data, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: color, // Cambiar a cualquier color que desees
+//         fillOpacity: 0.5, // Cambiar la opacidad del relleno
+//         color: 'transparent', // Cambiar el color del borde
+//         weight: 4, // Cambiar el grosor del borde
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       layer.bindPopup("<b>Estatus de área :</b> " + feature.properties.ZON_PRIM +
+//         "<br><b>Etapa:</b> " + feature.properties.ETAPAS);
+//     }
+//   });
+// }
 
-var ZMP_CLogistico = geoJSONPDUyOT_PA(ZMP_CLogistico, '#00008b');
-var ZMP_CSalud = geoJSONPDUyOT_PA(ZMP_CSalud, '#6faac8');
-var ZMP_ParqIndustrial = geoJSONPDUyOT_PA(ZMP_ParqIndustrial, '#4a1743');
-var ZMP_ParqHidrico = geoJSONPDUyOT_PA(ZMP_ParqHidrico, '#baff95');
-var ZMP_RastroTipoTIFF = geoJSONPDUyOT_PA(ZMP_RastroTipoTIFF, '#ed40be');
-var ZMP_RecintoFerial = geoJSONPDUyOT_PA(ZMP_RecintoFerial, '#f28781');
-var ZMP_SubcentroUrb = geoJSONPDUyOT_PA(ZMP_SubcentroUrb, '#ff8041');
-var ZMP_SueloUrb = geoJSONPDUyOT_PA(ZMP_SueloUrb, '#ffff3f');
+// var ZMP_CLogistico = geoJSONPDUyOT_PA(ZMP_CLogistico, '#00008b');
+// var ZMP_CSalud = geoJSONPDUyOT_PA(ZMP_CSalud, '#6faac8');
+// var ZMP_ParqIndustrial = geoJSONPDUyOT_PA(ZMP_ParqIndustrial, '#4a1743');
+// var ZMP_ParqHidrico = geoJSONPDUyOT_PA(ZMP_ParqHidrico, '#baff95');
+// var ZMP_RastroTipoTIFF = geoJSONPDUyOT_PA(ZMP_RastroTipoTIFF, '#ed40be');
+// var ZMP_RecintoFerial = geoJSONPDUyOT_PA(ZMP_RecintoFerial, '#f28781');
+// var ZMP_SubcentroUrb = geoJSONPDUyOT_PA(ZMP_SubcentroUrb, '#ff8041');
+// var ZMP_SueloUrb = geoJSONPDUyOT_PA(ZMP_SueloUrb, '#ffff3f');
 
-function geoJSONPDUyOT_PA(data, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: color,
-        fillOpacity: 0.5,
-        color: 'transparent',
-        weight: 4,
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup("<b>Uso de área:</b> " + feature.properties.USO);
+// function geoJSONPDUyOT_PA(data, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: color,
+//         fillOpacity: 0.5,
+//         color: 'transparent',
+//         weight: 4,
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       layer.bindPopup("<b>Uso de área:</b> " + feature.properties.USO);
 
-    }
-  });
-}
+//     }
+//   });
+// }
 
 
-var ZMP_SueloNOUrb = geoJSONPDUyOT_PA02(ZMP_SueloNOUrb, 'yellowgreen');
-var ZMP_ZonaUrb = geoJSONPDUyOT_PA02(ZMP_ZonaUrb, 'khaki');
+// var ZMP_SueloNOUrb = geoJSONPDUyOT_PA02(ZMP_SueloNOUrb, 'yellowgreen');
+// var ZMP_ZonaUrb = geoJSONPDUyOT_PA02(ZMP_ZonaUrb, 'khaki');
 
-function geoJSONPDUyOT_PA02(data, color) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: color,
-        fillOpacity: 0.5,
-        weight: 4,
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup("<b>Estatus de área :</b> " + feature.properties.ZON_PRIM +
-        "<br><b>Etapa:</b> " + feature.properties.ETAPAS);
-    }
-  });
-}
+// function geoJSONPDUyOT_PA02(data, color) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: color,
+//         fillOpacity: 0.5,
+//         weight: 4,
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       layer.bindPopup("<b>Estatus de área :</b> " + feature.properties.ZON_PRIM +
+//         "<br><b>Etapa:</b> " + feature.properties.ETAPAS);
+//     }
+//   });
+// }
 
 
 
@@ -1468,7 +1468,7 @@ var layers = [
   // { layer: PobAGEB_R102020, checkbox: chkPobAGEBR10 },
   // { layer: PobAGEB_R112020, checkbox: chkPobAGEBR11 },
   // { layer: PobAGEB_R122020, checkbox: chkPobAGEBR12 },
-  { layer: PobAGEB_ZMP2020, checkbox: chkPobAGEBZMP }, // ZMP
+  // { layer: PobAGEB_ZMP2020, checkbox: chkPobAGEBZMP }, // ZMP
   { layer: PobAGEB_HGO2020, checkbox: chkPobAGEBHgo }, //Hidalgo
 
   //Distritos de Riego 
@@ -1510,66 +1510,66 @@ var layers = [
 
 
   // // // Zonas Metropolitanas
-  { layer: ZMVM_InfoGene, checkbox: chkDivisionZMVM },
-  { layer: InfoZMP, checkbox: chkInfoZMP },
-  { layer: InfoZMT, checkbox: chkInfoZMT },
-  { layer: InfoZMTUL, checkbox: chkInfoZMTUL },
+  // { layer: ZMVM_InfoGene, checkbox: chkDivisionZMVM },
+  // { layer: InfoZMP, checkbox: chkInfoZMP },
+  // { layer: InfoZMT, checkbox: chkInfoZMT },
+  // { layer: InfoZMTUL, checkbox: chkInfoZMTUL },
 
   // // // PDUyOT Zona Metropolitana de Pachuca 
-  { layer: ZMP_CM_UNESCO, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Acueducto_Padre_Tembleque, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_CM_UNESCO, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Acueducto_Padre_Tembleque, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_CorredorCySCarrMéxico_Pachuca, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_CorredorCySCarrPachuca_CiudadSahagun, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_CorredorCySCarrMéxico_Pachuca, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_CorredorCySCarrPachuca_CiudadSahagun, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_ParqueEcológico, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_ParqueEcológico, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_N1er, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_N2do, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_N3er, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_N1er, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_N2do, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_N3er, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_CU, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_CUR, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_SCU, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_CU, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_CUR, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_SCU, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_PPDU, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_ParqueHídrico, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Parques_Industriales, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_PPDU, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_ParqueHídrico, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Parques_Industriales, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_Corredor_Montana, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Corredor_Haciendas, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Corredor_Tur_Pac_T, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Ampliacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Vialidades_Propuestas, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Libramiento_Sur, checkbox: chkZMP_PDUyOT_ImgObj },
-  { layer: ZMP_Habilitacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Corredor_Montana, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Corredor_Haciendas, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Corredor_Tur_Pac_T, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Ampliacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Vialidades_Propuestas, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Libramiento_Sur, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Habilitacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_Estacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
+  // { layer: ZMP_Estacion_Tren, checkbox: chkZMP_PDUyOT_ImgObj },
 
-  { layer: ZMP_SNoU, checkbox: chkZMP_PDUyOT_ZonP },
-  { layer: ZMP_SUrbanizable, checkbox: chkZMP_PDUyOT_ZonP },
-  { layer: ZMP_Urbano, checkbox: chkZMP_PDUyOT_ZonP },
-  // { layer: ZMP_PPDU, checkbox: chkZMP_PDUyOT_ZonP },
+  // { layer: ZMP_SNoU, checkbox: chkZMP_PDUyOT_ZonP },
+  // { layer: ZMP_SUrbanizable, checkbox: chkZMP_PDUyOT_ZonP },
+  // { layer: ZMP_Urbano, checkbox: chkZMP_PDUyOT_ZonP },
+  // // { layer: ZMP_PPDU, checkbox: chkZMP_PDUyOT_ZonP },
 
-  { layer: ZMP_ZonaU, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_CP20_22, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_MP22_27, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_LP27_52, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_Res, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_SueloNoUrbanizable, checkbox: chkZMP_PDUyOT_EC },
-  { layer: ZMP_PoliAct, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_ZonaU, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_CP20_22, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_MP22_27, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_LP27_52, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_Res, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_SueloNoUrbanizable, checkbox: chkZMP_PDUyOT_EC },
+  // { layer: ZMP_PoliAct, checkbox: chkZMP_PDUyOT_EC },
 
-  { layer: ZMP_ZonaUrb, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_SueloNOUrb, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_ZonaUrb, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_SueloNOUrb, checkbox: chkZMP_PDUyOT_PA },
 
-  { layer: ZMP_CLogistico, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_CSalud, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_ParqIndustrial, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_ParqHidrico, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_RastroTipoTIFF, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_RecintoFerial, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_SubcentroUrb, checkbox: chkZMP_PDUyOT_PA },
-  { layer: ZMP_SueloUrb, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_CLogistico, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_CSalud, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_ParqIndustrial, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_ParqHidrico, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_RastroTipoTIFF, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_RecintoFerial, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_SubcentroUrb, checkbox: chkZMP_PDUyOT_PA },
+  // { layer: ZMP_SueloUrb, checkbox: chkZMP_PDUyOT_PA },
 ];
 
 // Asignar eventos para controlar la visibilidad de las capas
