@@ -1064,6 +1064,7 @@ var Modulo_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Tepatepec_B1_2025, 'pin
 var Modulo_Cerro_El_Xicuco_B1_2025 = GeoJSONModuloRiego(Modulo_Cerro_El_Xicuco_B1_2025, 'pink');
 var Modulo_Distrito_100_Ajacuba_B1_2025 = GeoJSONModuloRiego(Modulo_Distrito_100_Ajacuba_B1_2025, 'pink');
 var Modulo_Articulo_27_B1_2025 = GeoJSONModuloRiego(Modulo_Articulo_27_B1_2025, 'pink');
+var Modulo_Dendho_Cardonal_B1_2025 = GeoJSONModuloRiego(Modulo_Dendho_Cardonal_B1_2025, 'pink');
 
 
 function GeoJSONModuloRiego(data, fillColor) {
@@ -1120,6 +1121,7 @@ var Modulo_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Tepatepec_Blo
 var Modulo_Cerro_El_Xicuco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_El_Xicuco_Bloque_1_2025, 'black');
 var Modulo_Distrito_100_Ajacuba_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Distrito_100_Ajacuba_Bloque_1_2025, 'black');
 var Modulo_Articulo_27_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Articulo_27_Bloque_1_2025, 'black');
+var Modulo_Dendho_Cardonal_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Dendho_Cardonal_Bloque_1_2025, 'black');
 
 
 function GeoJSONModuloRiego2025(data, fillColor) {
@@ -1485,6 +1487,7 @@ var layers = [
   { layer: Modulo_Cerro_El_Xicuco_B1_2025, checkbox: chkCerro_El_Xicuco_B1_2025 },
   { layer: Modulo_Distrito_100_Ajacuba_B1_2025, checkbox: chk100_Ajacuba_B1_2025 },
   { layer: Modulo_Articulo_27_B1_2025, checkbox: chkArticulo_27_B1_2025 },
+  { layer: Modulo_Dendho_Cardonal_B1_2025, checkbox: chkDendho_Cardonal_B1_2025 },
 
 
   { layer: Modulo_Actopan_Bloque_1_2025, checkbox: chkActopan_Bloque_1_2025 },
@@ -1499,6 +1502,7 @@ var layers = [
   { layer: Modulo_Cerro_El_Xicuco_Bloque_1_2025, checkbox: chkCerro_El_Xicuco_Bloque_1_2025 },
   { layer: Modulo_Distrito_100_Ajacuba_Bloque_1_2025, checkbox: chk100_Ajacuba_Bloque_1_2025 },
   { layer: Modulo_Articulo_27_Bloque_1_2025, checkbox: chkArticulo_27_Bloque_1_2025 },
+  { layer: Modulo_Dendho_Cardonal_Bloque_1_2025, checkbox: chkDendho_Cardonal_Bloque_1_2025 },
 
 
   // // // Zonas Metropolitanas
