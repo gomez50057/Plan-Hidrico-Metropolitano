@@ -789,71 +789,71 @@ function geoJSONInfoHgo(data, color) {
 // }
 
 // // // Regionalización // // //
-var Reg01_2020 = geoJSONRegiones(Reg01Tula, 'Pink');
-var Reg02_2020 = geoJSONRegiones(Reg02Tulancingo, 'Ivory');
-var Reg03_2020 = geoJSONRegiones(Reg03Pachuca, 'Indigo');
-var Reg04_2020 = geoJSONRegiones(Reg04Huejutla, 'Olive');
-var Reg05_2020 = geoJSONRegiones(Reg05MR, 'Crimson');
-var Reg06_2020 = geoJSONRegiones(Reg06Tizayuca, 'Teal');
-var Reg07_2020 = geoJSONRegiones(Reg07Actopan, 'Gold');
-var Reg08_2020 = geoJSONRegiones(Reg08Ixmiquilpan, 'purple');
-var Reg09_2020 = geoJSONRegiones(Reg09Zacualtipan, 'Aqua');
-var Reg10_2020 = geoJSONRegiones(Reg10Apan, 'Magenta');
-var Reg11_2020 = geoJSONRegiones(Reg11Huichapan, 'Turquoise');
-var Reg12_2020 = geoJSONRegiones(Reg12Jacala, 'Plum');
-function geoJSONRegiones(data, fillColor) {
-  return L.geoJSON(data, {
-    style: function (feature) {
-      return {
-        fillColor: fillColor, // Cambiar a cualquier color que desees
-        fillOpacity: 0.6, // Cambiar la opacidad del relleno
-        color: 'transparent', // Cambiar el color del borde
-        weight: 2, // Cambiar el grosor del borde
-      };
-    },
-    onEachFeature: function (feature, layer) {
-      var poblacionMun = feature.properties.POBMUN.toLocaleString();
-      var poblacionFem = feature.properties.POBFEM.toLocaleString();
-      var poblacionMas = feature.properties.POBMAS.toLocaleString();
-      var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
+// var Reg01_2020 = geoJSONRegiones(Reg01Tula, 'Pink');
+// var Reg02_2020 = geoJSONRegiones(Reg02Tulancingo, 'Ivory');
+// var Reg03_2020 = geoJSONRegiones(Reg03Pachuca, 'Indigo');
+// var Reg04_2020 = geoJSONRegiones(Reg04Huejutla, 'Olive');
+// var Reg05_2020 = geoJSONRegiones(Reg05MR, 'Crimson');
+// var Reg06_2020 = geoJSONRegiones(Reg06Tizayuca, 'Teal');
+// var Reg07_2020 = geoJSONRegiones(Reg07Actopan, 'Gold');
+// var Reg08_2020 = geoJSONRegiones(Reg08Ixmiquilpan, 'purple');
+// var Reg09_2020 = geoJSONRegiones(Reg09Zacualtipan, 'Aqua');
+// var Reg10_2020 = geoJSONRegiones(Reg10Apan, 'Magenta');
+// var Reg11_2020 = geoJSONRegiones(Reg11Huichapan, 'Turquoise');
+// var Reg12_2020 = geoJSONRegiones(Reg12Jacala, 'Plum');
+// function geoJSONRegiones(data, fillColor) {
+//   return L.geoJSON(data, {
+//     style: function (feature) {
+//       return {
+//         fillColor: fillColor, // Cambiar a cualquier color que desees
+//         fillOpacity: 0.6, // Cambiar la opacidad del relleno
+//         color: 'transparent', // Cambiar el color del borde
+//         weight: 2, // Cambiar el grosor del borde
+//       };
+//     },
+//     onEachFeature: function (feature, layer) {
+//       var poblacionMun = feature.properties.POBMUN.toLocaleString();
+//       var poblacionFem = feature.properties.POBFEM.toLocaleString();
+//       var poblacionMas = feature.properties.POBMAS.toLocaleString();
+//       var SupMun = feature.properties.Superficie.toFixed(3) + " km²";
 
-      var PMDU = feature.properties.PMDU;
-      var LINKPMDU = feature.properties.LINKPMDU;
-      var LINKPMD = feature.properties.LINKPMD;
-      var ATLAS = feature.properties.ATLAS;
-      var LINKATLAS = feature.properties.LINKATLAS;
+//       var PMDU = feature.properties.PMDU;
+//       var LINKPMDU = feature.properties.LINKPMDU;
+//       var LINKPMD = feature.properties.LINKPMD;
+//       var ATLAS = feature.properties.ATLAS;
+//       var LINKATLAS = feature.properties.LINKATLAS;
 
-      var PobEst = feature.properties.POB_ESTATA.toLocaleString();
-      layer.bindPopup("<div class='PopupT'>" + "<b>Región</b> " + feature.properties.NO_Reg + "</div>" +
-        "<b>Municipio:</b> " + feature.properties.NOM_MUN +
-        "<br><b>Población Municipal:</b> " + poblacionMun +
-        "<br><b>Mujeres:</b> " + poblacionFem +
-        "<br><b>Hombres:</b> " + poblacionMas +
-        "<br><b>Superficie:</b> " + SupMun +
-        "<br><b>Población Regiónal:</b> " + PobEst +
-        "<div class='PopupSubT'><b>Instrumentos de Planeación </b></div>");
-      // Comprobar si PMDU no es igual a "No existe" y agregar la sección correspondiente
-      if (PMDU !== "No existe") {
-        layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " +
-          "<a href='" + LINKPMDU + "' target='_blank'>" + feature.properties.NOM_LINK_P +
-          "</a>" + "<b> (</b>" + feature.properties.FECH + "<b>)</b>");
-      } else {
-        layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " + PMDU);
-      }
-      layer.setPopupContent(layer.getPopup()._content + "<br><b>PMD:</b> " +
-        "<a href='" + LINKPMD + "' target='_blank'>" + "<b> Consultar </b>" +
-        "</a>" + "<b> (</b>" + feature.properties.FECHPMD + "<b>)</b>");
-      // Comprobar si ATLAS no es igual a "No existe" y agregar la sección correspondiente
-      if (ATLAS !== "No existe") {
-        layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " +
-          "<a href='" + LINKATLAS + "' target='_blank'>" + "<b> Consultar </b>" +
-          "</a>" + "<b> (</b>" + feature.properties.FECHATLAS + "<b>)</b>");
-      } else {
-        layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " + ATLAS);
-      }
-    }
-  });
-}
+//       var PobEst = feature.properties.POB_ESTATA.toLocaleString();
+//       layer.bindPopup("<div class='PopupT'>" + "<b>Región</b> " + feature.properties.NO_Reg + "</div>" +
+//         "<b>Municipio:</b> " + feature.properties.NOM_MUN +
+//         "<br><b>Población Municipal:</b> " + poblacionMun +
+//         "<br><b>Mujeres:</b> " + poblacionFem +
+//         "<br><b>Hombres:</b> " + poblacionMas +
+//         "<br><b>Superficie:</b> " + SupMun +
+//         "<br><b>Población Regiónal:</b> " + PobEst +
+//         "<div class='PopupSubT'><b>Instrumentos de Planeación </b></div>");
+//       // Comprobar si PMDU no es igual a "No existe" y agregar la sección correspondiente
+//       if (PMDU !== "No existe") {
+//         layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " +
+//           "<a href='" + LINKPMDU + "' target='_blank'>" + feature.properties.NOM_LINK_P +
+//           "</a>" + "<b> (</b>" + feature.properties.FECH + "<b>)</b>");
+//       } else {
+//         layer.setPopupContent(layer.getPopup()._content + "<b>PMDU:</b> " + PMDU);
+//       }
+//       layer.setPopupContent(layer.getPopup()._content + "<br><b>PMD:</b> " +
+//         "<a href='" + LINKPMD + "' target='_blank'>" + "<b> Consultar </b>" +
+//         "</a>" + "<b> (</b>" + feature.properties.FECHPMD + "<b>)</b>");
+//       // Comprobar si ATLAS no es igual a "No existe" y agregar la sección correspondiente
+//       if (ATLAS !== "No existe") {
+//         layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " +
+//           "<a href='" + LINKATLAS + "' target='_blank'>" + "<b> Consultar </b>" +
+//           "</a>" + "<b> (</b>" + feature.properties.FECHATLAS + "<b>)</b>");
+//       } else {
+//         layer.setPopupContent(layer.getPopup()._content + "<br><b>Atlas de Riesgos:</b> " + ATLAS);
+//       }
+//     }
+//   });
+// }
 
 // // // Zonas Metropolitanas // // //
 
@@ -970,18 +970,18 @@ function getColor(poblacion) {
   }
 }
 
-var PobAGEB_R012020 = createGeoJSONLayer(R01T_poblacionAGEB2020); // REGION 01
-var PobAGEB_R022020 = createGeoJSONLayer(R02TUL_poblacionAGEB2020); // REGION 02
-var PobAGEB_R032020 = createGeoJSONLayer(R03_poblacionAGEB2020); // REGION 03
-var PobAGEB_R042020 = createGeoJSONLayer(R04_poblacionAGEB2020); // REGION 04
-var PobAGEB_R052020 = createGeoJSONLayer(R05_poblacionAGEB2020); // REGION 05
-var PobAGEB_R062020 = createGeoJSONLayer(R06_poblacionAGEB2020); // REGION 06
-var PobAGEB_R072020 = createGeoJSONLayer(R07_poblacionAGEB2020); // REGION 07
-var PobAGEB_R082020 = createGeoJSONLayer(R08_poblacionAGEB2020); // REGION 08
-var PobAGEB_R092020 = createGeoJSONLayer(R09_poblacionAGEB2020); // REGION 09
-var PobAGEB_R102020 = createGeoJSONLayer(R10_poblacionAGEB2020); // REGION 10
-var PobAGEB_R112020 = createGeoJSONLayer(R11_poblacionAGEB2020); // REGION 11
-var PobAGEB_R122020 = createGeoJSONLayer(R12_poblacionAGEB2020); // REGION 12
+// var PobAGEB_R012020 = createGeoJSONLayer(R01T_poblacionAGEB2020); // REGION 01
+// var PobAGEB_R022020 = createGeoJSONLayer(R02TUL_poblacionAGEB2020); // REGION 02
+// var PobAGEB_R032020 = createGeoJSONLayer(R03_poblacionAGEB2020); // REGION 03
+// var PobAGEB_R042020 = createGeoJSONLayer(R04_poblacionAGEB2020); // REGION 04
+// var PobAGEB_R052020 = createGeoJSONLayer(R05_poblacionAGEB2020); // REGION 05
+// var PobAGEB_R062020 = createGeoJSONLayer(R06_poblacionAGEB2020); // REGION 06
+// var PobAGEB_R072020 = createGeoJSONLayer(R07_poblacionAGEB2020); // REGION 07
+// var PobAGEB_R082020 = createGeoJSONLayer(R08_poblacionAGEB2020); // REGION 08
+// var PobAGEB_R092020 = createGeoJSONLayer(R09_poblacionAGEB2020); // REGION 09
+// var PobAGEB_R102020 = createGeoJSONLayer(R10_poblacionAGEB2020); // REGION 10
+// var PobAGEB_R112020 = createGeoJSONLayer(R11_poblacionAGEB2020); // REGION 11
+// var PobAGEB_R122020 = createGeoJSONLayer(R12_poblacionAGEB2020); // REGION 12
 
 var PobAGEB_ZMP2020 = createGeoJSONLayer(ZMP_poblacionAGEB2020); // ZMP AGEB
 var PobAGEB_HGO2020 = createGeoJSONLayer(HgoAGEB2020); // Hidalgo AGEB
@@ -1441,33 +1441,33 @@ var layers = [
 
 
   // // // Regionalización
-  { layer: Reg01_2020, checkbox: chkReg01 },
-  { layer: Reg02_2020, checkbox: chkReg02 },
-  { layer: Reg03_2020, checkbox: chkReg03 },
-  { layer: Reg04_2020, checkbox: chkReg04 },
-  { layer: Reg05_2020, checkbox: chkReg05 },
-  { layer: Reg06_2020, checkbox: chkReg06 },
-  { layer: Reg07_2020, checkbox: chkReg07 },
-  { layer: Reg08_2020, checkbox: chkReg08 },
-  { layer: Reg09_2020, checkbox: chkReg09 },
-  { layer: Reg10_2020, checkbox: chkReg10 },
-  { layer: Reg11_2020, checkbox: chkReg11 },
-  { layer: Reg12_2020, checkbox: chkReg12 },
+  // { layer: Reg01_2020, checkbox: chkReg01 },
+  // { layer: Reg02_2020, checkbox: chkReg02 },
+  // { layer: Reg03_2020, checkbox: chkReg03 },
+  // { layer: Reg04_2020, checkbox: chkReg04 },
+  // { layer: Reg05_2020, checkbox: chkReg05 },
+  // { layer: Reg06_2020, checkbox: chkReg06 },
+  // { layer: Reg07_2020, checkbox: chkReg07 },
+  // { layer: Reg08_2020, checkbox: chkReg08 },
+  // { layer: Reg09_2020, checkbox: chkReg09 },
+  // { layer: Reg10_2020, checkbox: chkReg10 },
+  // { layer: Reg11_2020, checkbox: chkReg11 },
+  // { layer: Reg12_2020, checkbox: chkReg12 },
 
   // // // AGEB en general
   // Regionalización
-  { layer: PobAGEB_R012020, checkbox: chkPobAGEBR01 },
-  { layer: PobAGEB_R022020, checkbox: chkPobAGEBR02 },
-  { layer: PobAGEB_R032020, checkbox: chkPobAGEBR03 },
-  { layer: PobAGEB_R042020, checkbox: chkPobAGEBR04 },
-  { layer: PobAGEB_R052020, checkbox: chkPobAGEBR05 },
-  { layer: PobAGEB_R062020, checkbox: chkPobAGEBR06 },
-  { layer: PobAGEB_R072020, checkbox: chkPobAGEBR07 },
-  { layer: PobAGEB_R082020, checkbox: chkPobAGEBR08 },
-  { layer: PobAGEB_R092020, checkbox: chkPobAGEBR09 },
-  { layer: PobAGEB_R102020, checkbox: chkPobAGEBR10 },
-  { layer: PobAGEB_R112020, checkbox: chkPobAGEBR11 },
-  { layer: PobAGEB_R122020, checkbox: chkPobAGEBR12 },
+  // { layer: PobAGEB_R012020, checkbox: chkPobAGEBR01 },
+  // { layer: PobAGEB_R022020, checkbox: chkPobAGEBR02 },
+  // { layer: PobAGEB_R032020, checkbox: chkPobAGEBR03 },
+  // { layer: PobAGEB_R042020, checkbox: chkPobAGEBR04 },
+  // { layer: PobAGEB_R052020, checkbox: chkPobAGEBR05 },
+  // { layer: PobAGEB_R062020, checkbox: chkPobAGEBR06 },
+  // { layer: PobAGEB_R072020, checkbox: chkPobAGEBR07 },
+  // { layer: PobAGEB_R082020, checkbox: chkPobAGEBR08 },
+  // { layer: PobAGEB_R092020, checkbox: chkPobAGEBR09 },
+  // { layer: PobAGEB_R102020, checkbox: chkPobAGEBR10 },
+  // { layer: PobAGEB_R112020, checkbox: chkPobAGEBR11 },
+  // { layer: PobAGEB_R122020, checkbox: chkPobAGEBR12 },
   { layer: PobAGEB_ZMP2020, checkbox: chkPobAGEBZMP }, // ZMP
   { layer: PobAGEB_HGO2020, checkbox: chkPobAGEBHgo }, //Hidalgo
 

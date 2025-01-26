@@ -59,113 +59,113 @@ const menu = [
 
     ]
   },
-  {
-    title: "Instrumentos de Planeación",
-    icon: "img/icon/planeacion.svg",
-    items: [
-      {
-        name: "Pachuca de Soto",
-        subItems: [
-          {
-            name: "PMDU",
-            subItems2: [
-              { name: "Etapas de Crecimiento", id: "chkEC_Pachuca" },
-            ]
-          },
-          // {
-          //   name: "Atlas de Riesgo",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper3" },
-          //     { name: "Elemento", id: "chkNameper4" }
-          //   ]
-          // },
-          // {
-          //   name: "POETL",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper5" },
-          //     { name: "Elemento", id: "chkNameper6" }
-          //   ]
-          // },
+  // {
+  //   title: "Instrumentos de Planeación",
+  //   icon: "img/icon/planeacion.svg",
+  //   items: [
+  //     {
+  //       name: "Pachuca de Soto",
+  //       subItems: [
+  //         {
+  //           name: "PMDU",
+  //           subItems2: [
+  //             { name: "Etapas de Crecimiento", id: "chkEC_Pachuca" },
+  //           ]
+  //         },
+  //         // {
+  //         //   name: "Atlas de Riesgo",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper3" },
+  //         //     { name: "Elemento", id: "chkNameper4" }
+  //         //   ]
+  //         // },
+  //         // {
+  //         //   name: "POETL",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper5" },
+  //         //     { name: "Elemento", id: "chkNameper6" }
+  //         //   ]
+  //         // },
 
-        ]
-      },
-      {
-        name: "Tizayuca",
-        subItems: [
-          {
-            name: "PMDU",
-            subItems2: [
-              { name: "Zonificación Secundaria", id: "chkZonSec_Tizayuca" },
-            ]
-          },
-          // {
-          //   name: "Atlas de Riesgo",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper3" },
-          //     { name: "Elemento", id: "chkNameper4" }
-          //   ]
-          // },
-          // {
-          //   name: "POETL",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper5" },
-          //     { name: "Elemento", id: "chkNameper6" }
-          //   ]
-          // },
-        ]
-      },
-      {
-        name: "Villa Tezontepec",
-        subItems: [
-          {
-            name: "PMDU",
-            subItems2: [
-              { name: "Zonificación Secundaria", id: "chkZonSec_VillaTezontepec" },
-            ]
-          },
-          // {
-          //   name: "Atlas de Riesgo",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper3" },
-          //     { name: "Elemento", id: "chkNameper4" }
-          //   ]
-          // },
-          // {
-          //   name: "POETL",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper5" },
-          //     { name: "Elemento", id: "chkNameper6" }
-          //   ]
-          // },
-        ]
-      },
-      {
-        name: "Mineral de la Reforma",
-        subItems: [
-          {
-            name: "PMDU",
-            subItems2: [
-              { name: "Zonificación Secundaria", id: "chkZonSec_MR" },
-            ]
-          },
-          // {
-          //   name: "Atlas de Riesgo",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper3" },
-          //     { name: "Elemento", id: "chkNameper4" }
-          //   ]
-          // },
-          // {
-          //   name: "POETL",
-          //   subItems2: [
-          //     { name: "Elemento", id: "chkNameper5" },
-          //     { name: "Elemento", id: "chkNameper6" }
-          //   ]
-          // },
-        ]
-      },
-    ]
-  },
+  //       ]
+  //     },
+  //     {
+  //       name: "Tizayuca",
+  //       subItems: [
+  //         {
+  //           name: "PMDU",
+  //           subItems2: [
+  //             { name: "Zonificación Secundaria", id: "chkZonSec_Tizayuca" },
+  //           ]
+  //         },
+  //         // {
+  //         //   name: "Atlas de Riesgo",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper3" },
+  //         //     { name: "Elemento", id: "chkNameper4" }
+  //         //   ]
+  //         // },
+  //         // {
+  //         //   name: "POETL",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper5" },
+  //         //     { name: "Elemento", id: "chkNameper6" }
+  //         //   ]
+  //         // },
+  //       ]
+  //     },
+  //     {
+  //       name: "Villa Tezontepec",
+  //       subItems: [
+  //         {
+  //           name: "PMDU",
+  //           subItems2: [
+  //             { name: "Zonificación Secundaria", id: "chkZonSec_VillaTezontepec" },
+  //           ]
+  //         },
+  //         // {
+  //         //   name: "Atlas de Riesgo",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper3" },
+  //         //     { name: "Elemento", id: "chkNameper4" }
+  //         //   ]
+  //         // },
+  //         // {
+  //         //   name: "POETL",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper5" },
+  //         //     { name: "Elemento", id: "chkNameper6" }
+  //         //   ]
+  //         // },
+  //       ]
+  //     },
+  //     {
+  //       name: "Mineral de la Reforma",
+  //       subItems: [
+  //         {
+  //           name: "PMDU",
+  //           subItems2: [
+  //             { name: "Zonificación Secundaria", id: "chkZonSec_MR" },
+  //           ]
+  //         },
+  //         // {
+  //         //   name: "Atlas de Riesgo",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper3" },
+  //         //     { name: "Elemento", id: "chkNameper4" }
+  //         //   ]
+  //         // },
+  //         // {
+  //         //   name: "POETL",
+  //         //   subItems2: [
+  //         //     { name: "Elemento", id: "chkNameper5" },
+  //         //     { name: "Elemento", id: "chkNameper6" }
+  //         //   ]
+  //         // },
+  //       ]
+  //     },
+  //   ]
+  // },
   {
     title: "Zonas Metropolitanas",
     icon: "img/icon/Zonas_Metropolitanas.svg",
@@ -196,46 +196,46 @@ const menu = [
       },
     ]
   },
-  {
-    title: "Regionalización",
-    icon: "img/icon/Regiones.svg",
-    items: [
-      {
-        name: "Información Básica",
-        subItems: [
-          { name: "Región Tula", id: "chkReg01" },
-          { name: "Región Tulancingo", id: "chkReg02" },
-          { name: "Región Pachuca", id: "chkReg03" },
-          { name: "Región Huejutla", id: "chkReg04" },
-          { name: "Región Mineral de la Reforma", id: "chkReg05" },
-          { name: "Región Tizayuca", id: "chkReg06" },
-          { name: "Región Actopan", id: "chkReg07" },
-          { name: "Región Ixmiquilpan", id: "chkReg08" },
-          { name: "Región Zacualtipán", id: "chkReg09" },
-          { name: "Región Apan", id: "chkReg10" },
-          { name: "Región Huichapan", id: "chkReg11" },
-          { name: "Región Jacala", id: "chkReg12" }
-        ]
-      },
-      {
-        name: "Población por AGEB",
-        subItems: [
-          { name: "Región Tula", id: "chkPobAGEBR01" },
-          { name: "Región Tulancingo", id: "chkPobAGEBR02" },
-          { name: "Región Pachuca", id: "chkPobAGEBR03" },
-          { name: "Región Huejutla", id: "chkPobAGEBR04" },
-          { name: "Región Mineral de la Reforma", id: "chkPobAGEBR05" },
-          { name: "Región Tizayuca", id: "chkPobAGEBR06" },
-          { name: "Región Actopan", id: "chkPobAGEBR07" },
-          { name: "Región Ixmiquilpan", id: "chkPobAGEBR08" },
-          { name: "Región Zacualtipán", id: "chkPobAGEBR09" },
-          { name: "Región Apan", id: "chkPobAGEBR10" },
-          { name: "Región Huichapan", id: "chkPobAGEBR11" },
-          { name: "Región Jacala", id: "chkPobAGEBR12" }
-        ]
-      }
-    ]
-  },
+  // {
+  //   title: "Regionalización",
+  //   icon: "img/icon/Regiones.svg",
+  //   items: [
+  //     {
+  //       name: "Información Básica",
+  //       subItems: [
+  //         { name: "Región Tula", id: "chkReg01" },
+  //         { name: "Región Tulancingo", id: "chkReg02" },
+  //         { name: "Región Pachuca", id: "chkReg03" },
+  //         { name: "Región Huejutla", id: "chkReg04" },
+  //         { name: "Región Mineral de la Reforma", id: "chkReg05" },
+  //         { name: "Región Tizayuca", id: "chkReg06" },
+  //         { name: "Región Actopan", id: "chkReg07" },
+  //         { name: "Región Ixmiquilpan", id: "chkReg08" },
+  //         { name: "Región Zacualtipán", id: "chkReg09" },
+  //         { name: "Región Apan", id: "chkReg10" },
+  //         { name: "Región Huichapan", id: "chkReg11" },
+  //         { name: "Región Jacala", id: "chkReg12" }
+  //       ]
+  //     },
+  //     {
+  //       name: "Población por AGEB",
+  //       subItems: [
+  //         { name: "Región Tula", id: "chkPobAGEBR01" },
+  //         { name: "Región Tulancingo", id: "chkPobAGEBR02" },
+  //         { name: "Región Pachuca", id: "chkPobAGEBR03" },
+  //         { name: "Región Huejutla", id: "chkPobAGEBR04" },
+  //         { name: "Región Mineral de la Reforma", id: "chkPobAGEBR05" },
+  //         { name: "Región Tizayuca", id: "chkPobAGEBR06" },
+  //         { name: "Región Actopan", id: "chkPobAGEBR07" },
+  //         { name: "Región Ixmiquilpan", id: "chkPobAGEBR08" },
+  //         { name: "Región Zacualtipán", id: "chkPobAGEBR09" },
+  //         { name: "Región Apan", id: "chkPobAGEBR10" },
+  //         { name: "Región Huichapan", id: "chkPobAGEBR11" },
+  //         { name: "Región Jacala", id: "chkPobAGEBR12" }
+  //       ]
+  //     }
+  //   ]
+  // },
 ];
 
 /**
