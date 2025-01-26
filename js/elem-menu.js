@@ -34,6 +34,7 @@ const menu = [
       { name: "100 Ajacuba", id: "chk100_Ajacuba_B1_2025", checked: true },
       { name: "Artículo 27", id: "chkArticulo_27_B1_2025", checked: true },
       { name: "Dendho Cardonal", id: "chkDendho_Cardonal_B1_2025", checked: true },
+      { name: "Potrero Blanco", id: "chkPotrero_Blanco_B1_2025", checked: true },
 
     ]
   },
@@ -54,6 +55,7 @@ const menu = [
       { name: "100 Ajacuba", id: "chk100_Ajacuba_Bloque_1_2025" },
       { name: "Artículo 27", id: "chkArticulo_27_Bloque_1_2025" },
       { name: "Dendho Cardonal", id: "chkDendho_Cardonal_Bloque_1_2025" },
+      { name: "Potrero Blanco", id: "chkPotrero_Blanco_Bloque_1_2025" },
 
     ]
   },
