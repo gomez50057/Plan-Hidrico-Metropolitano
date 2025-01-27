@@ -1054,12 +1054,12 @@ function GeoJSONDistRiego(data, fillColor) {
 }
 
 var Modulo_Actopan_B1_2025 = GeoJSONModuloRiego(Modulo_Actopan_B1_2025, 'pink');
-var Modulo_Agricola_Teltipan_B1_2025 = GeoJSONModuloRiego(Modulo_Agricola_Teltipan_B1_2025, 'blue');
-var Modulo_Alto_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Alto_Tepatepec_B1_2025, 'blue');
+var Modulo_Agricola_Teltipan_B1_2025 = GeoJSONModuloRiego(Modulo_Agricola_Teltipan_B1_2025, 'pink');
+var Modulo_Alto_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Alto_Tepatepec_B1_2025, 'pink');
 var Modulo_El_Bexha_B1_2025 = GeoJSONModuloRiego(Modulo_El_Bexha_B1_2025, 'pink');
 var Modulo_Cerro_Juandho_B1_2025 = GeoJSONModuloRiego(Modulo_Cerro_Juandho_B1_2025, 'pink');
-var Modulo_Endho_Xochitlan_B1_2025 = GeoJSONModuloRiego(Modulo_Endho_Xochitlan_B1_2025, 'blue');
-var Modulo_GamaGaox_B1_2025 = GeoJSONModuloRiego(Modulo_GamaGaox_B1_2025, 'blue');
+var Modulo_Endho_Xochitlan_B1_2025 = GeoJSONModuloRiego(Modulo_Endho_Xochitlan_B1_2025, 'pink');
+var Modulo_GamaGaox_B1_2025 = GeoJSONModuloRiego(Modulo_GamaGaox_B1_2025, 'pink');
 var Modulo_El_Solis_B1_2025 = GeoJSONModuloRiego(Modulo_El_Solis_B1_2025, 'pink');
 var Modulo_Tepatepec_B1_2025 = GeoJSONModuloRiego(Modulo_Tepatepec_B1_2025, 'pink');
 var Modulo_Cerro_El_Xicuco_B1_2025 = GeoJSONModuloRiego(Modulo_Cerro_El_Xicuco_B1_2025, 'pink');
@@ -1074,10 +1074,12 @@ function GeoJSONModuloRiego(data, fillColor) {
     style: function (feature) {
       // Determinar el color de la línea según TIPO_REV
       var lineColor;
-      if (feature.properties.TIPO_REV === 'BLOQUE 1' || feature.properties.TIPO_REV === 'ENTUBADO') {
-        lineColor = '#d98637';
-      } else if (feature.properties.TIPO_REV === 'CONCRETO') {
-        lineColor = '#808080';
+      if (['ACERO', 'CONCRETO', 'MAMPOSTERIA', 'REVESTIDO MI', 'Canaletas MD', 'CANALETAS_REVESTIDO', 'ENTUBADO', 'CANALETA_REVESTIDO', 'TUBERÍA', 'TOMA 12 PPAL REQUENA', 'TOMA 16 SBLAT', 'TOMA 17 PPAL ENDHO', 'TOMA 20 PPAL ENDHO', 'TOMA 20 PPAL REQUENA', 'TOMA 23 VIEJA PPAL REQUENA', 'TOMA 35 PPAL ENDHO'].includes(feature.properties.TIPO_REV)) {
+        lineColor = '#2381bb'; //Azul = Revestido concreto
+      } else if (['TIERRA', 'POR REVESTIR', 'MAMPOSTERIA', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(feature.properties.TIPO_REV)) {
+        lineColor = '#ffd50b'; //Amarillo = Tierra
+      } else if (['BLOQUE 1', '2025'].includes(feature.properties.TIPO_REV)) {
+        lineColor = '#f70000'; //Amarillo = rojo
       } else {
         lineColor = fillColor;
       }
@@ -1111,20 +1113,20 @@ function GeoJSONModuloRiego(data, fillColor) {
   }).addTo(map);
 }
 
-var Modulo_Actopan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Actopan_Bloque_1_2025, 'black');
-var Modulo_Agrícola_Teltipan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Agrícola_Teltipan_Bloque_1_2025, 'black');
-var Modulo_Alto_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Alto_Tepatepec_Bloque_1_2025, 'black');
-var Modulo_El_Bexha_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Bexha_Bloque_1_2025, 'black');
-var Modulo_Cerro_Juandho_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_Juandho_Bloque_1_2025, 'black');
-var Modulo_Endho_Xochitlán_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Endho_Xochitlán_Bloque_1_2025, 'black');
-var Modulo_GamaGaox_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_GamaGaox_Bloque_1_2025, 'black');
-var Modulo_El_Solis_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Solis_Bloque_1_2025, 'black');
-var Modulo_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Tepatepec_Bloque_1_2025, 'black');
-var Modulo_Cerro_El_Xicuco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_El_Xicuco_Bloque_1_2025, 'black');
-var Modulo_Distrito_100_Ajacuba_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Distrito_100_Ajacuba_Bloque_1_2025, 'black');
-var Modulo_Articulo_27_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Articulo_27_Bloque_1_2025, 'black');
-var Modulo_Dendho_Cardonal_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Dendho_Cardonal_Bloque_1_2025, 'black');
-var Modulo_Potrero_Blanco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Potrero_Blanco_Bloque_1_2025, 'black');
+var Modulo_Actopan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Actopan_Bloque_1_2025, '#f70000');
+var Modulo_Agrícola_Teltipan_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Agrícola_Teltipan_Bloque_1_2025, '#f70000');
+var Modulo_Alto_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Alto_Tepatepec_Bloque_1_2025, '#f70000');
+var Modulo_El_Bexha_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Bexha_Bloque_1_2025, '#f70000');
+var Modulo_Cerro_Juandho_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_Juandho_Bloque_1_2025, '#f70000');
+var Modulo_Endho_Xochitlán_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Endho_Xochitlán_Bloque_1_2025, '#f70000');
+var Modulo_GamaGaox_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_GamaGaox_Bloque_1_2025, '#f70000');
+var Modulo_El_Solis_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_El_Solis_Bloque_1_2025, '#f70000');
+var Modulo_Tepatepec_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Tepatepec_Bloque_1_2025, '#f70000');
+var Modulo_Cerro_El_Xicuco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Cerro_El_Xicuco_Bloque_1_2025, '#f70000');
+var Modulo_Distrito_100_Ajacuba_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Distrito_100_Ajacuba_Bloque_1_2025, '#f70000');
+var Modulo_Articulo_27_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Articulo_27_Bloque_1_2025, '#f70000');
+var Modulo_Dendho_Cardonal_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Dendho_Cardonal_Bloque_1_2025, '#f70000');
+var Modulo_Potrero_Blanco_Bloque_1_2025 = GeoJSONModuloRiego2025(Modulo_Potrero_Blanco_Bloque_1_2025, '#f70000');
 
 
 function GeoJSONModuloRiego2025(data, fillColor) {
@@ -1197,7 +1199,7 @@ function GeoJSONModuloRiego2025(data, fillColor) {
 // var ZMP_Ampliacion_Tren = geoJSONPDUyOTImgObj(ZMP_Ampliacion_Tren, 'darkblue', 'darkblue');
 // var ZMP_Vialidades_Propuestas = geoJSONPDUyOTImgObj(ZMP_Vialidades_Propuestas, 'cornflowerblue', 'cornflowerblue');
 // var ZMP_Libramiento_Sur = geoJSONPDUyOTImgObj(ZMP_Libramiento_Sur, 'Gold', 'Gold');
-// var ZMP_Habilitacion_Tren = geoJSONPDUyOTImgObj(ZMP_Habilitacion_Tren, 'black', 'black');
+// var ZMP_Habilitacion_Tren = geoJSONPDUyOTImgObj(ZMP_Habilitacion_Tren, 'black', '#f70000');
 // var ZMP_Estacion_Tren = geoJSONPDUyOTImgObj(ZMP_Estacion_Tren, 'saddlebrown', 'saddlebrown');
 // var ZMP_Corredor_Tur_Pac_T = geoJSONPDUyOTImgObj(ZMP_Corredor_Tur_Pac_T, 'purple', 'purple');
 // var ZMP_Corredor_Montana = geoJSONPDUyOTImgObj(ZMP_Corredor_Montana, 'firebrick', 'firebrick');

@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-
 }
 
 #map {
@@ -17,6 +16,7 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  background: #691B31;
 }
 
 /*  */
@@ -105,7 +105,12 @@ body {
   left: 0;
   height: 100%;
   width: 263px;
-  background: #691c32;
+  background: #691b32;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.9);
+  border-radius: 0 20px 0px 0;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -563,6 +568,8 @@ body {
   text-align: center;
   font-weight: 900;
   margin-bottom: 4px;
+  padding: 3px 5px;
+  border-radius: 10px;
   color: #fff;
   background-color: #9F2241;
 }
