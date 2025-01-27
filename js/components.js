@@ -1079,7 +1079,7 @@ function GeoJSONModuloRiego(data, fillColor) {
       } else if (['TIERRA', 'POR REVESTIR', 'MAMPOSTERIA', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(feature.properties.TIPO_REV)) {
         lineColor = '#ffd50b'; //Amarillo = Tierra
       } else if (['BLOQUE 1', '2025'].includes(feature.properties.TIPO_REV)) {
-        lineColor = '#f70000'; //Amarillo = rojo
+        lineColor = '#ffd50b'; //Rojo = 2025 trabajo
       } else {
         lineColor = fillColor;
       }
