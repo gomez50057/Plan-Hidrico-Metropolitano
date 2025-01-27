@@ -211,6 +211,7 @@ body {
   color: #ddc9a3;
   font-size: 20px;
   margin: 0 1em 0 1em;
+  cursor: pointer;
   transition: all 0.7s ease;
 }
 
@@ -274,6 +275,7 @@ body {
 .titulo_subsub:hover {
   color: #BC955B;
   font-weight: 600;
+  cursor: pointer;
   transition: all 0.5s ease;
 
 }
@@ -293,7 +295,7 @@ body {
 }
 
 .sidebar .nav-links li .sub-menu {
-  padding: 10px 0px 0px 40px;
+  padding: 10px 0 5px 40px;
   border-radius: 20px;
   background: #9F2241;
   display: none;
@@ -466,7 +468,9 @@ body {
 .PMDU_Tizayuca,
 .PMDU_VillaTezontepec,
 .PMDU_MR,
-.PMDU_Pachuca {
+.PMDU_Pachuca,
+.moduloR,
+.DR {
   overflow: auto;
   /* scrollbar-width: thin; */
 
@@ -501,11 +505,13 @@ body {
 .PMDU_Tizayuca,
 .PMDU_VillaTezontepec,
 .PMDU_MR,
-.PMDU_Pachuca {
+.PMDU_Pachuca,
+.moduloR,
+.DR {
   margin: 5px 5px 0 0;
   background-color: rgba(255, 255, 255, 0.836);
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   padding: 0px 10px 10px 10px;
   z-index: 999;
   display: none;
@@ -521,18 +527,22 @@ body {
 }
 
 .tabla h3 {
+  font-size: 0.7rem;
+  text-align: center;
   background-color: #691c32;
+  border-radius: 15px;
   color: #fff;
   position: sticky;
   top: 0;
   z-index: 1;
-  margin-bottom: 5px;
-  padding: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
 }
-
-.tabla h3 {
-  font-size: .9em;
-  text-align: center;
+.tabla h3 span{
+  font-size: 0.85rem;
+  display: block;
+  font-style: italic;
+  color: #ddc9a3;
 }
 
 .tabla table tr td {

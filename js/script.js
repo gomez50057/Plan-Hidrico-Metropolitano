@@ -66,15 +66,15 @@ profileContent.addEventListener("click", () => {
 
 // Obtén referencias a los checkboxes y la tabla de simbología //
 var checkboxes = [
-  document.getElementById("chkPobAGEBZMP"),
-  document.getElementById("chkPobAGEBHgo")
+  // document.getElementById("chkPobAGEBZMP"),
+  document.getElementById("chkPobAGEBHgo"),
 ];
 
 // Agrega checkboxes adicionales con nombres similares
-for (var i = 1; i <= 12; i++) {
-  var checkbox = document.getElementById("chkPobAGEBR" + (i < 10 ? "0" : "") + i);
-  checkboxes.push(checkbox);
-}
+// for (var i = 1; i <= 12; i++) {
+//   var checkbox = document.getElementById("chkPobAGEBR" + (i < 10 ? "0" : "") + i);
+//   checkboxes.push(checkbox);
+// }
 
 var legend = document.getElementById("legend");
 
@@ -95,6 +95,75 @@ function actualizarTablaLegend() {
 }
 
 
+// Obtén referencias a los checkboxes y el elemento móduloR
+var checkboxesModuloR = [
+  document.getElementById("chk100_Ajacuba_B1_2025"),
+  document.getElementById("chkActopan_B1_2025"),
+  document.getElementById("chkAlto_Tepatepec_B1_2025"),
+  document.getElementById("chkArticulo_27_B1_2025"),
+  document.getElementById("chkEl_Bexha_B1_2025"),
+  document.getElementById("chkCerro_El_Xicuco_B1_2025"),
+  document.getElementById("chkCerro_Juandho_B1_2025"),
+  document.getElementById("chkDendho_Cardonal_B1_2025"),
+  document.getElementById("chkEl_Solis_B1_2025"),
+  document.getElementById("chkEndho_Xochitlan_B1_2025"),
+  document.getElementById("chkGamaGaox_B1_2025"),
+  document.getElementById("chkPotrero_Blanco_B1_2025"),
+  document.getElementById("chkTeltipan_B1_2025"),
+  document.getElementById("chkTepatepec_B1_2025")
+];
+
+var moduloR = document.getElementById("moduloR");
+
+// Agrega oyentes de cambio a los checkboxes
+checkboxesModuloR.forEach(function (checkbox) {
+  checkbox.addEventListener("change", actualizarModuloR);
+});
+
+// Función para actualizar la visibilidad del módulo
+function actualizarModuloR() {
+  // Verifica el estado de todos los checkboxes
+  var mostrarModulo = checkboxesModuloR.some(function (checkbox) {
+    return checkbox.checked;
+  });
+
+  // Muestra u oculta el módulo según la condición
+  moduloR.style.display = mostrarModulo ? "block" : "none";
+}
+
+// Llama a la función al cargar la página para establecer el estado inicial
+actualizarModuloR();
+
+// Obtén referencias a todos los checkboxes
+var checkboxesDR = [
+  document.getElementById("chk112Ajacuba"),
+  document.getElementById("chk100Alfajayucan"),
+  document.getElementById("chk003Tula")
+];
+
+// Obtén referencia al elemento DR
+var DR = document.getElementById("DR");
+
+// Agrega oyentes de cambio a los checkboxes
+checkboxesDR.forEach(function (checkbox) {
+  if (checkbox) { // Verifica que el checkbox exista
+    checkbox.addEventListener("change", actualizarDR);
+  }
+});
+
+// Función para actualizar la visibilidad del elemento DR
+function actualizarDR() {
+  // Verifica si al menos un checkbox está seleccionado
+  var mostrarDR = checkboxesDR.some(function (checkbox) {
+    return checkbox && checkbox.checked; // Verifica que exista y esté marcado
+  });
+
+  // Muestra u oculta el elemento DR
+  DR.style.display = mostrarDR ? "block" : "none";
+}
+
+// Llama a la función al cargar la página para establecer el estado inicial
+actualizarDR();
 
 
 // Define una función para manejar la visibilidad de las tablas //
@@ -104,49 +173,57 @@ function actualizarTabla(checkbox, tablaId) {
 }
 
 // Obtén referencias a los checkboxes
-var checkboxImgObj = document.getElementById('chkZMP_PDUyOT_ImgObj');
-var checkboxZonP = document.getElementById('chkZMP_PDUyOT_ZonP');
-var checkboxEtapaCrecimiento = document.getElementById('chkZMP_PDUyOT_EC');
-var checkboxPoligonosActuacion = document.getElementById('chkZMP_PDUyOT_PA');
+// var checkboxImgObj = document.getElementById('chkZMP_PDUyOT_ImgObj');
+// var checkboxZonP = document.getElementById('chkZMP_PDUyOT_ZonP');
+// var checkboxEtapaCrecimiento = document.getElementById('chkZMP_PDUyOT_EC');
+// var checkboxPoligonosActuacion = document.getElementById('chkZMP_PDUyOT_PA');
 
 
-var checkboxPMDU_Pachuca = document.getElementById('chkEC_Pachuca');
+// var checkboxPMDU_Pachuca = document.getElementById('chkEC_Pachuca');
 
-var checkboxPMDU_Tizayuca = document.getElementById('chkZonSec_Tizayuca');
-var checkboxPMDU_VillaTezontepec = document.getElementById('chkZonSec_VillaTezontepec');
-var checkboxPMDU_MR = document.getElementById('chkZonSec_MR');
+// var checkboxPMDU_Tizayuca = document.getElementById('chkZonSec_Tizayuca');
+// var checkboxPMDU_VillaTezontepec = document.getElementById('chkZonSec_VillaTezontepec');
+// var checkboxPMDU_MR = document.getElementById('chkZonSec_MR');
 
 
 
 
 // Agrega oyentes de cambio a los checkboxes
-checkboxImgObj.addEventListener('change', function () {
-  actualizarTabla(checkboxImgObj, 'ImgObjetivo');
-});
-checkboxZonP.addEventListener('change', function () {
-  actualizarTabla(checkboxZonP, 'ZonP');
-});
-checkboxEtapaCrecimiento.addEventListener('change', function () {
-  actualizarTabla(checkboxEtapaCrecimiento, 'EtapaCrecimiento');
-});
-checkboxPoligonosActuacion.addEventListener('change', function () {
-  actualizarTabla(checkboxPoligonosActuacion, 'PoligonosActuacion');
+// checkboxImgObj.addEventListener('change', function () {
+//   actualizarTabla(checkboxImgObj, 'ImgObjetivo');
+// });
+// checkboxZonP.addEventListener('change', function () {
+//   actualizarTabla(checkboxZonP, 'ZonP');
+// });
+// checkboxEtapaCrecimiento.addEventListener('change', function () {
+//   actualizarTabla(checkboxEtapaCrecimiento, 'EtapaCrecimiento');
+// });
+// checkboxPoligonosActuacion.addEventListener('change', function () {
+//   actualizarTabla(checkboxPoligonosActuacion, 'PoligonosActuacion');
+// });
+
+// checkboxPMDU_Pachuca.addEventListener('change', function () {
+//   actualizarTabla(checkboxPMDU_Pachuca, 'PMDU_Pachuca');
+// });
+
+// checkboxPMDU_Tizayuca.addEventListener('change', function () {
+//   actualizarTabla(checkboxPMDU_Tizayuca, 'PMDU_Tizayuca');
+// });
+
+// checkboxPMDU_VillaTezontepec.addEventListener('change', function () {
+//   actualizarTabla(checkboxPMDU_VillaTezontepec, 'PMDU_VillaTezontepec');
+// });
+
+// checkboxPMDU_MR.addEventListener('change', function () {
+//   actualizarTabla(checkboxPMDU_MR, 'PMDU_MR');
+// });
+
+checkboxesDR.addEventListener('change', function () {
+  actualizarTabla(checkboxesDR, 'DR');
 });
 
-checkboxPMDU_Pachuca.addEventListener('change', function () {
-  actualizarTabla(checkboxPMDU_Pachuca, 'PMDU_Pachuca');
-});
-
-checkboxPMDU_Tizayuca.addEventListener('change', function () {
-  actualizarTabla(checkboxPMDU_Tizayuca, 'PMDU_Tizayuca');
-});
-
-checkboxPMDU_VillaTezontepec.addEventListener('change', function () {
-  actualizarTabla(checkboxPMDU_VillaTezontepec, 'PMDU_VillaTezontepec');
-});
-
-checkboxPMDU_MR.addEventListener('change', function () {
-  actualizarTabla(checkboxPMDU_MR, 'PMDU_MR');
+checkboxesModuloR.addEventListener('change', function () {
+  actualizarTabla(checkboxesModuloR, 'moduloR');
 });
 
 
@@ -160,6 +237,23 @@ function addChangeEventListener(id, layer) {
 }
 
 // Añade el evento de cambio para chkZonSec_XXXXXXXX
-addChangeEventListener('chkZonSec_Tizayuca', HDMA_Unifamiliar);
-addChangeEventListener('chkZonSec_MR', MR_PA);
-addChangeEventListener('chkZonSec_VillaTezontepec', Villa_equipamiento);
+// addChangeEventListener('chkZonSec_Tizayuca', HDMA_Unifamiliar);
+// addChangeEventListener('chkZonSec_MR', MR_PA);
+// addChangeEventListener('chkZonSec_VillaTezontepec', Villa_equipamiento);
+
+// addChangeEventListener('chk100_Ajacuba_Bloque_1_2025', Modulo_Actopan_B1_2025);
+// addChangeEventListener('chkActopan_Bloque_1_2025', Modulo_Agricola_Teltipan_B1_2025);
+// addChangeEventListener('chkAlto_Tepatepec_Bloque_1_2025', Modulo_Alto_Tepatepec_B1_2025);
+// addChangeEventListener('chkArticulo_27_Bloque_1_2025', Modulo_El_Bexha_B1_2025);
+// addChangeEventListener('chkEl_Bexha_Bloque_1_2025', Modulo_Cerro_Juandho_B1_2025);
+// addChangeEventListener('chkCerro_El_Xicuco_Bloque_1_2025', Modulo_Endho_Xochitlan_B1_2025);
+// addChangeEventListener('chkCerro_Juandho_Bloque_1_2025', Modulo_GamaGaox_B1_2025);
+// addChangeEventListener('chkDendho_Cardonal_Bloque_1_2025', Modulo_El_Solis_B1_2025);
+// addChangeEventListener('chkEl_Solis_Bloque_1_2025', Modulo_Tepatepec_B1_2025);
+// addChangeEventListener('chkEndho_Xochitlán_Bloque_1_2025', Modulo_Cerro_El_Xicuco_B1_2025);
+// addChangeEventListener('chkGamaGaox_Bloque_1_2025', Modulo_Distrito_100_Ajacuba_B1_2025);
+// addChangeEventListener('chkPotrero_Blanco_Bloque_1_2025', Modulo_Articulo_27_B1_2025);
+// addChangeEventListener('chkTeltipan_Bloque_1_2025', Modulo_Dendho_Cardonal_B1_2025);
+// addChangeEventListener('chkTepatepec_Bloque_1_2025', Modulo_Potrero_Blanco_B1_2025);
+
+

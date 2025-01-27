@@ -10,7 +10,7 @@ const menu = [
   },
   {
     title: "Distritos de Riego",
-    icon: "img/icon/Zonas_Metropolitanas.svg",
+    icon: "img/icon/distritos.svg",
     items: [
       { name: "112 Ajacuba", id: "chk112Ajacuba", checked: true },
       { name: "100 Alfajayucan", id: "chk100Alfajayucan", checked: true },
@@ -19,7 +19,7 @@ const menu = [
   },
   {
     title: "Módulos de Riego",
-    icon: "img/icon/Zonas_Metropolitanas.svg",
+    icon: "img/icon/modulos.svg",
     items: [
       { name: "100 Ajacuba", id: "chk100_Ajacuba_B1_2025", checked: true },
       { name: "Actopan", id: "chkActopan_B1_2025", checked: true },
@@ -40,7 +40,7 @@ const menu = [
   },
   {
     title: "Módulos de Riego B1 2025",
-    icon: "img/icon/Zonas_Metropolitanas.svg",
+    icon: "img/icon/modulos.svg",
     items: [
       { name: "100 Ajacuba", id: "chk100_Ajacuba_Bloque_1_2025" },
       { name: "Actopan", id: "chkActopan_Bloque_1_2025" },
