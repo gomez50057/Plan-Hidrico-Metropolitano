@@ -1075,11 +1075,11 @@ function GeoJSONModuloRiego(data, fillColor) {
       // Determinar el color de la línea según TIPO_REV
       var lineColor;
       if (['ACERO', 'CONCRETO', 'MAMPOSTERIA', 'REVESTIDO MI', 'Canaletas MD', 'CANALETAS_REVESTIDO', 'ENTUBADO', 'CANALETA_REVESTIDO', 'TUBERÍA', 'TOMA 12 PPAL REQUENA', 'TOMA 16 SBLAT', 'TOMA 17 PPAL ENDHO', 'TOMA 20 PPAL ENDHO', 'TOMA 20 PPAL REQUENA', 'TOMA 23 VIEJA PPAL REQUENA', 'TOMA 35 PPAL ENDHO', 'PVC'].includes(feature.properties.TIPO_REV)) {
-        lineColor = '#2381bb'; //Azul = Revestido concreto
+        lineColor = '#2381bb'; // Azul = Revestido concreto
       } else if (['TIERRA', 'POR REVESTIR', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(feature.properties.TIPO_REV)) {
-        lineColor = '#ffd50b'; //Amarillo = Tierra
+        lineColor = '#ffd50b'; // Amarillo = Tierra
       } else if (['BLOQUE 1', '2025'].includes(feature.properties.TIPO_REV)) {
-        lineColor = '#ffd50b'; //Amarillo = 2025 trabajo
+        lineColor = '#ffd50b'; // Amarillo = 2025 trabajo
       } else {
         lineColor = fillColor;
       }
@@ -1095,7 +1095,15 @@ function GeoJSONModuloRiego(data, fillColor) {
     onEachFeature: function (feature, layer) {
       var nombre = feature.properties.NOMBRE || "Sin Dato";
       var nivelRed = feature.properties.NIVEL_RED || "Sin Dato";
-      var tipoRev = feature.properties.TIPO_REV || "Sin Dato";
+      
+      // Verificar y ajustar el texto de TIPO_REV
+      var tipoRev = feature.properties.TIPO_REV;
+      if (['TIERRA', 'POR REVESTIR', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(tipoRev)) {
+        tipoRev = "TIERRA";
+      } else {
+        tipoRev = tipoRev || "Sin Dato";
+      }
+
       var edoFisico = feature.properties.EDO_FISICO || "Sin Dato";
       var longitud = (feature.properties.LONG_KM ? feature.properties.LONG_KM.toLocaleString() + " km²" : "Sin Dato");
       var observaciones = feature.properties.BLOQUE || "Sin Dato";
