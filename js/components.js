@@ -995,7 +995,7 @@ function createGeoJSONLayer(data) {
       return {
         fillColor: fillColor,
         fillOpacity: 0.7,
-        color: fillColor, // Puedes usar el mismo color de relleno para el borde
+        color: fillColor,
         weight: 1,
       };
     },
@@ -1095,7 +1095,7 @@ function GeoJSONModuloRiego(data, fillColor) {
     onEachFeature: function (feature, layer) {
       var nombre = feature.properties.NOMBRE || "Sin Dato";
       var nivelRed = feature.properties.NIVEL_RED || "Sin Dato";
-      
+
       // Verificar y ajustar el texto de TIPO_REV
       var tipoRev = feature.properties.TIPO_REV;
       if (['TIERRA', 'POR REVESTIR', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(tipoRev)) {
