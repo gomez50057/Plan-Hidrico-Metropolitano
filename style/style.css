@@ -293,7 +293,8 @@ body {
 }
 
 .sidebar .nav-links li .sub-menu {
-  padding: 0px 0px 0px 40px;
+  padding: 10px 0px 0px 40px;
+  border-radius: 20px;
   background: #9F2241;
   display: none;
 }

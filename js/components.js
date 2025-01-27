@@ -1074,7 +1074,7 @@ function GeoJSONModuloRiego(data, fillColor) {
     style: function (feature) {
       // Determinar el color de la línea según TIPO_REV
       var lineColor;
-      if (['ACERO', 'CONCRETO', 'MAMPOSTERIA', 'REVESTIDO MI', 'Canaletas MD', 'CANALETAS_REVESTIDO', 'ENTUBADO', 'CANALETA_REVESTIDO', 'TUBERÍA', 'TOMA 12 PPAL REQUENA', 'TOMA 16 SBLAT', 'TOMA 17 PPAL ENDHO', 'TOMA 20 PPAL ENDHO', 'TOMA 20 PPAL REQUENA', 'TOMA 23 VIEJA PPAL REQUENA', 'TOMA 35 PPAL ENDHO'].includes(feature.properties.TIPO_REV)) {
+      if (['ACERO', 'CONCRETO', 'MAMPOSTERIA', 'REVESTIDO MI', 'Canaletas MD', 'CANALETAS_REVESTIDO', 'ENTUBADO', 'CANALETA_REVESTIDO', 'TUBERÍA', 'TOMA 12 PPAL REQUENA', 'TOMA 16 SBLAT', 'TOMA 17 PPAL ENDHO', 'TOMA 20 PPAL ENDHO', 'TOMA 20 PPAL REQUENA', 'TOMA 23 VIEJA PPAL REQUENA', 'TOMA 35 PPAL ENDHO', 'PVC'].includes(feature.properties.TIPO_REV)) {
         lineColor = '#2381bb'; //Azul = Revestido concreto
       } else if (['TIERRA', 'POR REVESTIR', 'MAMPOSTERIA', 'A REVESTIR', '3. A REVESTIR EL SOLIS.kmz/A REVESTIR', '1.A REVESTIR.kmz/A REVESTIR'].includes(feature.properties.TIPO_REV)) {
         lineColor = '#ffd50b'; //Amarillo = Tierra
